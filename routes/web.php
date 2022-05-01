@@ -11,6 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Auth::routes();
+
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/dashboard', 'DashboardController@index');
+Route::get('/generate-pin', 'PinController@index');
+Route::get('/application-form', 'ApplicationController@index');
+Route::get('/sale-point-members', 'SalePointController@index');
+Route::get('/members', 'MemberController@index');
+Route::get('/salepoint-downline-members', 'MemberController@index');
+Route::get('/downline-members', 'MemberController@index');
