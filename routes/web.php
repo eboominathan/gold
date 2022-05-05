@@ -22,6 +22,7 @@ Route::get('/dashboard', 'DashboardController@index');
 Route::get('/generate-pin', 'PinController@index');
 Route::get('/application-form', 'ApplicationController@index');
 Route::get('/sale-point-members', 'SalePointController@index');
+Route::get('/view-member-info', 'SalePointController@viewMemberInfo');
 Route::get('/members', 'MemberController@index');
-Route::get('/salepoint-downline-members', 'MemberController@index');
+Route::get('/salepoint-downline-members', 'SalePointDownlineController@index');
 Route::get('/downline-members', 'MemberController@index');

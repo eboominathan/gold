@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class SalePointController extends Controller
+class SalePointDownlineController extends Controller
 {
       /**
      * Create a new controller instance.
@@ -23,12 +23,12 @@ class SalePointController extends Controller
      */
     public function index()
     {
-    	$title = 'SalePoint Members';
-        return view('sale_point_members',compact('title'));
+    	$title = 'SalePoint Downline Members';
+        return view('sale_point_downline_members',compact('title'));
     }
     public function viewMemberInfo()
     {
-        $title = 'View Member Information';
+        $title = 'View Downline Member Information';
         return view('view_sale_point_member',compact('title'));
     }
 }
