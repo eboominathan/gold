@@ -39,7 +39,39 @@
         <script type="text/javascript" src="{{ asset('assets/pages/jquery.form-advanced.init.js')}}"></script> --}}
 
     {{-- @endif --}}
-    @if(Request::segment(2) == 'dashboard')
+    @if(Request::segment(1) == 'sale-point-members')
+
+<script src="{{ asset('assets/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/datatables/dataTables.bootstrap.js') }}"></script> 
+<script src="{{ asset('assets/plugins/datatables/dataTables.responsive.min.js') }}"></script>
+<script src="{{ asset('assets/plugins/datatables/responsive.bootstrap.min.js') }}"></script>
+ 
+
+
+        <script type="text/javascript">
+            $('#datatable-responsive').DataTable({
+                     responsive: true,
+                     columnDefs: [
+                     
+            { responsivePriority: 10001, targets: 8 },
+        
+         
+        ]
+        });
+        </script>
+    @endif
+    @if(Request::segment(1) == 'application-form')
+    <script src="{{ asset('assets/plugins/moment/moment.js')}}"></script>
+    <script src="{{ asset('assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js')}}"></script>
+    <script type="text/javascript">
+         jQuery('.datepicker').datepicker({
+              format: 'dd-mm-yyyy',
+              todayHighlight:true,
+              autoclose :true
+         });
+    </script>
+    @endif
+    @if(Request::segment(1) == 'dashboard')
 	{{-- Dashbaord  --}}
 	  <script src="{{ asset('assets/plugins/peity/jquery.peity.min.js')}}"></script>
 

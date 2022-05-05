@@ -8,6 +8,19 @@
 
   <title>{{ $title }} .::Gold Herbal Care::.</title>
 
+
+  <!-- DataTables -->
+    <link href="{{ asset('assets/plugins/datatables/jquery.dataTables.min.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="{{ asset('assets/plugins/datatables/buttons.bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="{{ asset('assets/plugins/datatables/fixedHeader.bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="{{ asset('assets/plugins/datatables/responsive.bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="{{ asset('assets/plugins/datatables/scroller.bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="{{ asset('assets/plugins/datatables/dataTables.colVis.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="{{ asset('assets/plugins/datatables/dataTables.bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
+    <link href="{{ asset('assets/plugins/datatables/fixedColumns.dataTables.min.css')}}" rel="stylesheet" type="text/css"/>
+
+
+
   <!-- Plugins css-->
         <link href="{{ asset('assets/plugins/bootstrap-tagsinput/css/bootstrap-tagsinput.css')}}" rel="stylesheet" />
         <link href="{{ asset('assets/plugins/switchery/css/switchery.min.css')}}" rel="stylesheet" />
@@ -25,7 +38,8 @@
   <link href="{{ asset('assets/css/icons.css')}}" rel="stylesheet" type="text/css" />
   <link href="{{ asset('assets/css/pages.css')}}" rel="stylesheet" type="text/css" />
   <link href="{{ asset('assets/css/responsive.css')}}" rel="stylesheet" type="text/css" />
-  <link href="{{ asset('assets/plugins/datatables/jquery.dataTables.min.css')}}" rel="stylesheet" type="text/css"/>
+ 
+
 
 
   <style type="text/css">
@@ -195,7 +209,7 @@
           <li><a href="javascript:void(0)"><i class="ti-settings m-r-10 text-custom"></i> Settings</a></li>
           <li><a href="javascript:void(0)"><i class="ti-lock m-r-10 text-custom"></i> Lock screen</a></li>
           <li class="divider"></li>
-          <li><a href="../admin/login.html"><i class="ti-power-off m-r-10 text-danger"></i> Logout</a></li>
+          <li><a href="{{url('/login')}}"><i class="ti-power-off m-r-10 text-danger"></i> Logout</a></li>
         </ul>
       </li>
     </ul>
@@ -231,9 +245,9 @@
         <li class="has_sub">
         <a href="javascript:void(0);" class="waves-effect"><i class="ti-user"></i> <span> SalePoint Members </span> <span class="menu-arrow"></span></a>
         <ul class="list-unstyled">
-          <li><a href="{{url('sale-point-members')}}">SalePoint Members</a></li>
+          {{-- <li><a href="{{url('sale-point-members')}}">SalePoint Members</a></li> --}}
           <li><a href="{{url('sale-point-members')}}">SalePoint Members Details</a></li>
-          <li><a href="{{url('sale-point-members')}}">SalePoint Address Details</a></li>
+          {{-- <li><a href="{{url('sale-point-members')}}">SalePoint Address Details</a></li> --}}
         </ul>
       </li> 
       <li class="has_sub">
