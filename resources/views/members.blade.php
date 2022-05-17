@@ -86,7 +86,7 @@
 														<th>STOCKPOINT ID NO</th>
 														<th>ADDRESS</th>
 														<th>PhoneNo</th>
-														<th>E-mail</th>
+														<th>Email</th>
 													</tr>
 												</thead>
 												<tbody>

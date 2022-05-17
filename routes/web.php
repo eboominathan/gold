@@ -29,6 +29,8 @@ Route::get('/members/address', 'MemberController@address');
 Route::get('/salepoint-downline-members', 'SalePointDownlineController@index');
 Route::get('/view-downline-members', 'SalePointDownlineController@viewDownlineMember');
 Route::get('/downline-members', 'MemberController@index');
+Route::get('/salepoint-purchase-order', 'SalePointPurchaseController@index');
+Route::get('/purchse-order-invoice', 'SalePointPurchaseController@purchase_order_invoice');
 
 /* Products */
 Route::resource('products', ProductController::class);

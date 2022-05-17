@@ -269,7 +269,7 @@
         <a href="{{url('products')}}" class="waves-effect"><i class="ti-image"></i><span> Product Details </span> </a>
       </li>    
          <li class="has_sub">
-        <a href="{{url('downline-members')}}" class="waves-effect"><i class="ti-shopping-cart"></i><span>SalePoint Purchasing Order</span> </a>
+        <a href="{{url('salepoint-purchase-order')}}" class="waves-effect"><i class="ti-shopping-cart"></i><span>SalePoint Purchasing Order</span> </a>
       </li> 
       
        <li class="has_sub">
