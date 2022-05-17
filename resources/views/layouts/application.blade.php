@@ -275,15 +275,15 @@
        <li class="has_sub">
         <a href="javascript:void(0);" class="waves-effect"><i class="ti-calendar"></i> <span> Order Invoice</span> <span class="menu-arrow"></span></a>
         <ul class="list-unstyled">
-          <li><a href="{{url('members')}}">Daily  Reports</a></li>
-          <li><a href="{{url('members')}}">Monthly Reports</a></li>
+          <li><a href="{{url('order-invoice-daily')}}">Daily  Reports</a></li>
+          <li><a href="{{url('order-invoice-monthly')}}">Monthly Reports</a></li>
         </ul>
       </li> 
       <li class="has_sub">
         <a href="javascript:void(0);" class="waves-effect"><i class="ti-calendar"></i> <span> Tax Invoice</span> <span class="menu-arrow"></span></a>
         <ul class="list-unstyled">
-          <li><a href="{{url('members')}}">Daily  Reports</a></li>
-          <li><a href="{{url('members')}}">Monthly Reports</a></li>
+          <li><a href="{{url('tax-invoice-daily')}}">Daily  Reports</a></li>
+          <li><a href="{{url('tax-invoice-monthly')}}">Monthly Reports</a></li>
         </ul>
       </li> 
       <li class="has_sub">

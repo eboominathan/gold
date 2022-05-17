@@ -21,67 +21,89 @@
  	<hr>
 
  @endif 
-<table  width="100%"  cellpadding="10">
-
+<table  width="100%" >
 	<tr>
-		<th align="left">Order Date :  {{\Carbon\Carbon::now()->format('d-m-Y') }} </th>
-		<th align="left"></th>
-		<th><h2>ORDER INVOICE  @if(Request::get('monthly')) MONTHLY @endif</h2></th>
-		<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-		@if(Request::get('monthly'))
-			<th align="right">Sponsor ID No: #123465</th>
-		<th align="left"></th>
+		 @if(!Request::get('monthly'))
+			<th align="left">Invoice Date :  {{\Carbon\Carbon::now()->format('d-m-Y') }} </th>		 
 		@else
-			<th align="right">Order Invoice No: #123465</th>
-		<th align="left"></th>
+			<th align="left">Order Month : {{\Carbon\Carbon::now()->format('M') }}</th>	 
 		@endif
+		<th><h2>TAX INVOICE  @if(Request::get('monthly')) MONTHLY @endif</h2></th>	 
+	 	<th align="right">Sponsor ID No: #123465</th> 
 	</tr>
 	<tr>
-		<th align="left">Order Month : {{\Carbon\Carbon::now()->format('M') }}</th>
-		<th align="left"></th>
+		 @if(!Request::get('monthly'))
+			<th align="left">Invoice No : #13</th>	 
+			@else
+				<th align="left">Purchased By : Raja</th>			 
+			@endif
+	 	
 		<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-		<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-		@if(Request::get('monthly'))
-		
+		<th align="right">Sponsor Name : JOHN</th>
+		  
+	</tr>
+	<tr>
+		 @if(!Request::get('monthly'))
+		<th align="left">Order Date : {{\Carbon\Carbon::now()->format('d-m-Y') }}</th>
+	 
 		@else
-			<th align="right">Order No :  #123465</th>
-			<th align="left"></th>
+			<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+		@endif
+		<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>		 
+		<th align="right">Sale Point ID No : SP0001</th>
+	 	 
+	</tr>
+	<tr> 
+		@if(!Request::get('monthly'))
+		<th align="left"> Order Month : {{\Carbon\Carbon::now()->format('M') }}</th>
+		<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>	 
+ 		@endif
+		 @if(!Request::get('monthly'))
+		<th align="right">Order Channel : C43534 </th>
+		 @endif
+
+	</tr>
+	<tr>
+		 @if(!Request::get('monthly'))
+		<th align="left">Purchased By : Raja</th>
+		<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+		@endif	 
+		 @if(!Request::get('monthly'))
+		<th align="right">Order No : 1321</th> 
 		@endif
 	</tr><tr>
-		<th align="left">Purchased By : Sanjay</th>
-		<th align="left"></th>
+		<th align="left">ID No : SP0001</th>
+ 
+	 
+		 @if(!Request::get('monthly'))
 		<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-		<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-		@if(Request::get('monthly'))
-		
+		<th align="right">Bill No:5485</th>
+	 
 		@else
-			<th align="right">Order Channel : C43534</th>
-			<th align="left"></th>
+			<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+			<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
 		@endif
 	</tr>
 	<tr>
-		<th align="left">Sale Point ID No : SP0001</th>
-		<th align="left"></th>
+		<th align="left"> Name & Address: Raja , Chennai</th>
+	 
+	 
+			 @if(!Request::get('monthly'))
 		<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-		<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-		<th align="right"></th>
-		<th align="left"></th>
-	</tr>
-	<tr>
-		<th align="left">Sale Point Name & Address: Sanjay , Madurai</th>
-		<th align="left"></th>
-		<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-		<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-		<th align="right"></th>
-		<th align="left"></th>
+		<th align="right">Ship To : Raj ,Chennai</th>
+ 
+		@else
+			<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+			<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+		@endif
 	</tr>
 	<tr>
 		<th align="left">Phone No : 9876541230</th>
-		<th align="left"></th>
-		<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+		 
+		 
 		<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
 		<th align="right"></th>
-		<th align="left"></th>
+	 
 	</tr>
 </table>
 <table  cellspacing="0" width="100%" border="1" style="border-collapse: collapse;" cellpadding="10">

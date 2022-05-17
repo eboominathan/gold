@@ -31,4 +31,29 @@ class SalePointPurchaseController extends Controller
     	$title = 'Purchase Order Invoice';
         return view('purchase_order_invoice',compact('title'));
     }
+    public function purchase_tax_invoice()
+    {
+    	$title = 'Purchase Tax Invoice';
+        return view('purchase_tax_invoice',compact('title'));
+    }
+    public function order_invoice_daily()
+    {
+    	$title = 'Order Invoice Daily';
+        return view('order_invoice_daily',compact('title'));
+    }
+    public function order_invoice_monthly()
+    {
+    	$title = 'Order Invoice Monthly';
+        return view('order_invoice_monthly',compact('title'));
+    }
+    public function tax_invoice_daily()
+    {
+    	$title = 'Tax Invoice Daily';
+        return view('tax_invoice_daily',compact('title'));
+    }
+    public function tax_invoice_monthly()
+    {
+    	$title = 'Tax Invoice Monthly';
+        return view('tax_invoice_monthly',compact('title'));
+    }
 }

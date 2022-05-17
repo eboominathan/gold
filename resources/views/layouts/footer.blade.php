@@ -39,6 +39,19 @@
         <script type="text/javascript" src="{{ asset('assets/pages/jquery.form-advanced.init.js')}}"></script> --}}
 
         {{-- @endif --}}
+        @if(Request::segment(1) == 'order-invoice-daily'|| Request::segment(1) == 'order-invoice-monthly')
+            <script src="{{ asset('assets/plugins/moment/moment.js')}}"></script>
+       <script src="{{ asset('assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js')}}"></script>
+       <script type="text/javascript">
+           jQuery('.datepicker').datepicker({
+              format: 'dd-mm-yyyy',
+              todayHighlight:true,
+              autoclose :true,
+          }); 
+     
+       </script>
+
+        @endif
         @if(Request::segment(1) == 'products')
          <script src="{{ asset('assets/plugins/datatables/jquery.dataTables.min.js') }}"></script>
         <script src="{{ asset('assets/plugins/datatables/dataTables.bootstrap.js') }}"></script> 

@@ -31,6 +31,11 @@ Route::get('/view-downline-members', 'SalePointDownlineController@viewDownlineMe
 Route::get('/downline-members', 'MemberController@index');
 Route::get('/salepoint-purchase-order', 'SalePointPurchaseController@index');
 Route::get('/purchse-order-invoice', 'SalePointPurchaseController@purchase_order_invoice');
+Route::get('/purchse-tax-invoice', 'SalePointPurchaseController@purchase_tax_invoice');
+Route::get('/order-invoice-daily', 'SalePointPurchaseController@order_invoice_daily');
+Route::get('/order-invoice-monthly', 'SalePointPurchaseController@order_invoice_monthly');
+Route::get('/tax-invoice-daily', 'SalePointPurchaseController@tax_invoice_daily');
+Route::get('/tax-invoice-monthly', 'SalePointPurchaseController@tax_invoice_monthly');
 
 /* Products */
 Route::resource('products', ProductController::class);
