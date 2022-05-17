@@ -13,10 +13,10 @@
 					<h4 class="page-title">{{$title}}</h4>
 					<ol class="breadcrumb">								
 						<li>
-							<a href="javascript:void(0);">Members</a>
+							<a href="javascript:void(0);">SalePoint Members</a>
 						</li>
 						<li class="active">
-							Members Details
+							SalePoint Members Address Details
 						</li>
 					</ol>
 				</div>
@@ -26,7 +26,7 @@
 					<div class="portlet">
 						<div class="portlet-heading bg-success">
 							<h3 class="portlet-title 	">
-								Members Details
+								SalePoint Members Address Details
 							</h3>
 							<div class="portlet-widgets">
 								<a href="javascript:;" data-toggle="reload"><i class="ion-refresh"></i></a>
@@ -72,45 +72,33 @@
 
 												<div class="clearfix"></div>
 
-												<table id="datatable-responsive"
-												class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0"
+												<table id="datatable"
+												class="table table-striped table-bordered nowrap" cellspacing="0"
 												width="100%">
 												<thead>
 													<tr>
 														<th>SNO</th>
 														<th>NAME</th>
 														<th>SALEPOINT ID No</th>
-														<th>PASSWORD</th>
-														<th>DATEOF JOINING</th>
-														<th>SPONSOR ID NO</th>
-														<th>STOCKPOINT ID NO</th>
 														<th>ADDRESS</th>
-														<th>PhoneNo</th>
-														<th>E-mail</th>
+														<th>PHONE</th>
+													 
 													</tr>
 												</thead>
 												<tbody>
 													<tr>
 														<td>1</td>
-														<td><a href="{{url('/view-member-info')}}">Nixon</a></td>
-														<td>123465</td>
-														<td>Password</td>
-														<td>2011/04/25</td>
+														<td><a href="{{url('/view-member-info')}}">Nixon</a></td>									 
 														<td>61</td>
 														<td>CHENNAI</td>
 														<td>5421</td>
-														<td>t.nixon@datatables.net</td>
 													</tr>
 													<tr>
-														<td>2</td>
-															<td><a href="{{url('/view-member-info')}}">Garrett</a></td>
-														<td>123465</td>
-														<td>Password</td>
-														<td>2011/04/25</td>
+														<td>2</td>										 
+														<td><a href="{{url('/view-member-info')}}">Nixon</a></td>									 
 														<td>61</td>
 														<td>CHENNAI</td>
 														<td>5421</td>
-														<td>t.nixon@datatables.net</td>
 													</tr>
 
 												</tbody>

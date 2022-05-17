@@ -39,6 +39,32 @@
         <script type="text/javascript" src="{{ asset('assets/pages/jquery.form-advanced.init.js')}}"></script> --}}
 
         {{-- @endif --}}
+        @if(Request::segment(1) == 'products')
+         <script src="{{ asset('assets/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+        <script src="{{ asset('assets/plugins/datatables/dataTables.bootstrap.js') }}"></script> 
+        <script src="{{ asset('assets/plugins/datatables/dataTables.responsive.min.js') }}"></script>
+        <script src="{{ asset('assets/plugins/datatables/responsive.bootstrap.min.js') }}"></script>
+
+            <!-- Modal-Effect -->
+        <script src="{{ asset('assets/plugins/custombox/js/custombox.min.js')}}"></script>
+        <script src="{{ asset('assets/plugins/custombox/js/legacy.min.js')}}"></script>
+
+
+        <script type="text/javascript">
+           var resizefunc = [];
+            $('#datatable-responsive').DataTable();
+
+            $('.btn-sm ').click(function(){
+              $('.modal-title').text('Edit Product');
+              $('#con-close-modal').modal('show');
+            });$('.add ').click(function(){
+              $('.modal-title').text('Add Product');
+              $('#con-close-modal').modal('show');
+            });
+       </script>
+
+
+        @endif
         @if(Request::segment(1) == 'sale-point-members')
 
         <script src="{{ asset('assets/plugins/datatables/jquery.dataTables.min.js') }}"></script>
@@ -49,9 +75,7 @@
 
 
         <script type="text/javascript">
-            $('#datatable-responsive').DataTable({
-               responsive: true                    
-           });
+            $('#datatable-responsive').DataTable();
        </script>
        @endif
        @if(Request::segment(1) == 'sale-point-members' || Request::segment(1) == 'members'|| Request::segment(1) == 'salepoint-downline-members' )

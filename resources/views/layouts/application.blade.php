@@ -9,6 +9,8 @@
   <title>{{ $title }} .::Gold Herbal Care::.</title>
 
 
+  <link href="{{ asset('assets/plugins/custombox/css/custombox.css')}}" rel="stylesheet">
+
   <!-- DataTables -->
     <link href="{{ asset('assets/plugins/datatables/jquery.dataTables.min.css')}}" rel="stylesheet" type="text/css"/>
     <link href="{{ asset('assets/plugins/datatables/buttons.bootstrap.min.css')}}" rel="stylesheet" type="text/css"/>
@@ -203,7 +205,7 @@
         <a href="#" class="right-bar-toggle waves-effect waves-light"><i class="icon-settings"></i></a>
       </li>
       <li class="dropdown top-menu-item-xs">
-        <a href="" class="dropdown-toggle profile waves-effect waves-light" data-toggle="dropdown" aria-expanded="true"><img src="assets/images/users/avatar-1.jpg" alt="user-img" class="img-circle"> </a>
+        <a href="" class="dropdown-toggle profile waves-effect waves-light" data-toggle="dropdown" aria-expanded="true"><img src="{{asset('assets/images/users/avatar-1.jpg')}}" alt="user-img" class="img-circle"> </a>
         <ul class="dropdown-menu">
           <li><a href="javascript:void(0)"><i class="ti-user m-r-10 text-custom"></i> Profile</a></li>
           <li><a href="javascript:void(0)"><i class="ti-settings m-r-10 text-custom"></i> Settings</a></li>
@@ -245,33 +247,27 @@
         <li class="has_sub">
         <a href="javascript:void(0);" class="waves-effect"><i class="ti-user"></i> <span> SalePoint Members </span> <span class="menu-arrow"></span></a>
         <ul class="list-unstyled">
-          {{-- <li><a href="{{url('sale-point-members')}}">SalePoint Members</a></li> --}}
           <li><a href="{{url('sale-point-members')}}">SalePoint Members Details</a></li>
-          {{-- <li><a href="{{url('sale-point-members')}}">SalePoint Address Details</a></li> --}}
+          <li><a href="{{url('sale-point-address')}}">SalePoint Address Details</a></li>
         </ul>
       </li> 
       <li class="has_sub">
         <a href="javascript:void(0);" class="waves-effect"><i class="ti-user"></i> <span> Members </span> <span class="menu-arrow"></span></a>
         <ul class="list-unstyled">
           <li><a href="{{url('members')}}">Members</a></li>                                  
-          <li><a href="{{url('members')}}">Members Details</a></li>
-          <li><a href="{{url('members')}}">Address Details</a></li>
+          {{-- <li><a href="{{url('members')}}">Members Details</a></li> --}}
+          <li><a href="{{url('members/address')}}">Address Details</a></li>
         </ul>
       </li> 
        <li class="has_sub">
         <a href="{{url('salepoint-downline-members')}}" class="waves-effect"><i class="ti-user"></i><span> Salepoint Downline Member Details </span> </a>
       </li>
-        <li class="has_sub">
+     {{--    <li class="has_sub">
         <a href="{{url('downline-members')}}" class="waves-effect"><i class="ti-user"></i><span>Downline Member Details </span> </a>
-      </li> 
+      </li>  --}}
       <li class="has_sub">
-        <a href="javascript:void(0);" class="waves-effect"><i class="ti-image"></i> <span> Product Details </span> <span class="menu-arrow"></span></a>
-        <ul class="list-unstyled">
-          <li><a href="{{url('members')}}">Product Add</a></li>
-          <li><a href="{{url('members')}}">Edit Product</a></li>
-          <li><a href="{{url('members')}}">Product Details</a></li>
-        </ul>
-      </li> 
+        <a href="{{url('products')}}" class="waves-effect"><i class="ti-image"></i><span> Product Details </span> </a>
+      </li>    
          <li class="has_sub">
         <a href="{{url('downline-members')}}" class="waves-effect"><i class="ti-shopping-cart"></i><span>SalePoint Purchasing Order</span> </a>
       </li> 

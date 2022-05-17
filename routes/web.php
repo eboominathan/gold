@@ -22,7 +22,13 @@ Route::get('/dashboard', 'DashboardController@index');
 Route::get('/generate-pin', 'PinController@index');
 Route::get('/application-form', 'ApplicationController@index');
 Route::get('/sale-point-members', 'SalePointController@index');
+Route::get('/sale-point-address', 'SalePointController@address');
 Route::get('/view-member-info', 'SalePointController@viewMemberInfo');
 Route::get('/members', 'MemberController@index');
+Route::get('/members/address', 'MemberController@address');
 Route::get('/salepoint-downline-members', 'SalePointDownlineController@index');
+Route::get('/view-downline-members', 'SalePointDownlineController@viewDownlineMember');
 Route::get('/downline-members', 'MemberController@index');
+
+/* Products */
+Route::resource('products', ProductController::class);

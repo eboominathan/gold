@@ -26,4 +26,9 @@ class MemberController extends Controller
     	$title = 'Members';
         return view('members',compact('title'));
     }
+    public function address()
+    {
+        $title = 'Members Address';
+        return view('members_address',compact('title'));
+    }
 }

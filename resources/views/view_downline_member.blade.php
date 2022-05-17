@@ -16,7 +16,7 @@
 							<a href="javascript:void(0);">SalePoint Members</a>
 						</li>
 						<li class="active">
-							SalePoint Downline Members Details
+							  Downline Members Details
 						</li>
 					</ol>
 				</div>
@@ -26,7 +26,7 @@
 					<div class="portlet">
 						<div class="portlet-heading bg-success">
 							<h3 class="portlet-title 	">
-								SalePoint Downline Members Details
+							  Downline Members Details
 							</h3>
 							<div class="portlet-widgets">
 								<a href="javascript:;" data-toggle="reload"><i class="ion-refresh"></i></a>
@@ -42,8 +42,7 @@
 								<div class="row">
 									<div class="col-sm-12">
 										<div class="card-box table-responsive">
-									 
-
+										 
 													<table id="datatable-responsive"
 													class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0"
 													width="100%">
@@ -51,8 +50,7 @@
 														<tr>
 															<th>SNO</th>
 															<th>DATE</th>
-															<th>SPONSOR ID No</th>
-															<th>MEMBER ID NO</th>
+															<th> ID NO</th>
 															<th>NAME & ADDRESS</th>
 															<th >CITY</th>
 															<th>PhoneNo</th>
@@ -61,18 +59,16 @@
 													<tbody>
 														<tr>
 															<td>1</td>
-															<td>1/05/2022</td>
+															<td>01-05-2022</td>
 															<td><a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="{{url('/view-downline-members')}}" data-original-title="Total Downline Members : 10">SPON15486</a></td>
-															<td>15486</td>
 															<td><a href="{{url('/view-member-info')}}">Nixon CHENNAI</a></td>
 															<td>CHENNAI</td>
 															<td>1235489</td>
 														</tr>
 														<tr>
 															<td>2</td>
-															<td>1/05/2022</td>
-															<td><a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="javascript:void(0)" data-original-title="Total Downline Members : 8">SPON15487</a></td>
-															<td>15486</td>
+															<td>01-05-2022</td>
+															<td><a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="{{url('/view-downline-members')}}" data-original-title="Total Downline Members : 8">SPON15487</a></td>
 															<td><a href="{{url('/view-member-info')}}">Garett CHENNAI</a></td>
 															<td>CHENNAI</td>
 															<td>1235489</td>

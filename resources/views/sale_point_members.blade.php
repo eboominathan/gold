@@ -72,8 +72,8 @@
 
 												<div class="clearfix"></div>
 
-												<table id="datatable-responsive"
-												class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0"
+												<table id="datatable"
+												class="table table-striped table-bordered nowrap" cellspacing="0"
 												width="100%">
 												<thead>
 													<tr>

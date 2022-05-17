@@ -30,5 +30,9 @@ class SalePointDownlineController extends Controller
     {
         $title = 'View Downline Member Information';
         return view('view_sale_point_member',compact('title'));
+    }public function viewDownlineMember()
+    {
+        $title = 'View Downline Members';
+        return view('view_downline_member',compact('title'));
     }
 }

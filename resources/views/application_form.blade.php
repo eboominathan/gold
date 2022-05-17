@@ -94,6 +94,12 @@
 										</div>
 										<div class="form-group">
 											<div class="col-md-6">
+												<label class="control-label">District </label>
+												<input class="form-control" > 
+												<span class="help-block"></span>
+											</div>
+										</div><div class="form-group">
+											<div class="col-md-6">
 												<label class="control-label">Pincode </label>
 												<input class="form-control" > 
 												<span class="help-block"></span>

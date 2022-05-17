@@ -26,6 +26,11 @@ class SalePointController extends Controller
     	$title = 'SalePoint Members';
         return view('sale_point_members',compact('title'));
     }
+     public function address()
+    {
+        $title = 'SalePoint Members address';
+        return view('sale_point_address',compact('title'));
+    }
     public function viewMemberInfo()
     {
         $title = 'View Member Information';
