@@ -289,15 +289,15 @@
       <li class="has_sub">
         <a href="javascript:void(0);" class="waves-effect"><i class="ti-calendar"></i> <span> SalePoint Product Sales Details</span> <span class="menu-arrow"></span></a>
         <ul class="list-unstyled">
-          <li><a href="{{url('members')}}">Daily  Reports</a></li>
-          <li><a href="{{url('members')}}">Monthly Reports</a></li>
+          <li><a href="{{url('product-sales-daily')}}">Daily  Reports</a></li>
+          <li><a href="{{url('product-sales-monthly')}}">Monthly Reports</a></li>
         </ul>
       </li>
       <li class="has_sub">
-        <a href="javascript:void(0);" class="waves-effect"><i class="ti-calendar"></i> <span> All SalePoint Product Stock List</span> <span class="menu-arrow"></span></a>
+        <a href="javascript:void(0);" class="waves-effect"><i class="ti-calendar"></i> <span>SalePoint Product Stock List</span> <span class="menu-arrow"></span></a>
         <ul class="list-unstyled">
-          <li><a href="{{url('members')}}">Daily  Reports</a></li>
-          <li><a href="{{url('members')}}">Monthly Reports</a></li>
+          <li><a href="{{url('purchase-sale-stock-list-daily')}}">Daily  Reports</a></li>
+          <li><a href="{{url('purchase-sale-stock-list-monthly')}}">Monthly Reports</a></li>
         </ul>
       </li> 
     

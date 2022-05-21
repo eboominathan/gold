@@ -36,6 +36,16 @@ Route::get('/order-invoice-daily', 'SalePointPurchaseController@order_invoice_da
 Route::get('/order-invoice-monthly', 'SalePointPurchaseController@order_invoice_monthly');
 Route::get('/tax-invoice-daily', 'SalePointPurchaseController@tax_invoice_daily');
 Route::get('/tax-invoice-monthly', 'SalePointPurchaseController@tax_invoice_monthly');
+Route::get('/product-sales-daily', 'SalepointProductSalesController@product_sales_daily');
+Route::get('/product-sales-monthly', 'SalepointProductSalesController@product_sales_monthly');
+Route::get('/downline-members-sale-details', 'SalepointProductSalesController@downline_members_sale_details');
+Route::get('/purchase-sale-stock-list-daily', 'SalepointPurchaseSaleStocksController@purchase_stocks_daily');
+Route::get('/purchase-sale-stock-list-monthly', 'SalepointPurchaseSaleStocksController@purchase_stocks_monthly');
+
+
+Route::get('/purchase-sale-stock-list-daily-view', 'SalepointPurchaseSaleStocksController@purchase_stocks_daily_view');
+
+
 
 /* Products */
 Route::resource('products', ProductController::class);
