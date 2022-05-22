@@ -40,8 +40,91 @@
 
         {{-- @endif --}}
 
+          @if(Request::segment(1) == 'salepoint-payout')
 
-         @if(Request::segment(1) == 'purchase-sale-stock-list-daily'  || Request::segment(1) == 'purchase-sale-stock-list-monthly')
+           <script src="{{ asset('assets/plugins/moment/moment.js')}}"></script>
+       <script src="{{ asset('assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js')}}"></script>
+       <script type="text/javascript">
+           jQuery('.datepicker').datepicker({
+              format: 'dd-mm-yyyy',
+              todayHighlight:true,
+              autoclose :true,
+
+          }); 
+
+
+
+    
+            function checkAll(){
+
+              if($('input.checked').is(':checked')){
+                  $('input.checked').prop('checked',false);
+              }else{
+                $('input.checked').prop('checked',true);
+              }
+            }
+          </script>
+          @endif
+          @if(Request::segment(1) == 'view-downline-members-purchase')
+          <script src="{{ asset('assets/plugins/moment/moment.js')}}"></script>
+       <script src="{{ asset('assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js')}}"></script>
+       <script type="text/javascript">
+      
+           jQuery('.monthpicker').datepicker({
+               format: "mm-yyyy",
+               viewMode: "months", 
+               minViewMode: "months",
+                 todayHighlight:true
+           });
+         
+       </script>
+       @endif          @if(Request::segment(1) == 'salepoint-downline-member-purchase')
+          <script src="{{ asset('assets/plugins/moment/moment.js')}}"></script>
+       <script src="{{ asset('assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js')}}"></script>
+       <script type="text/javascript">
+           jQuery('.datepicker').datepicker({
+              format: 'dd-mm-yyyy',
+              todayHighlight:true,
+              autoclose :true,
+
+          }); 
+           jQuery('.monthpicker').datepicker({
+               format: "mm-yyyy",
+               viewMode: "months", 
+               minViewMode: "months",
+                 todayHighlight:true
+           });
+         
+       </script>
+       @endif
+         @if(Request::segment(1) == 'product-stock-list-daily'  || Request::segment(1) == 'product-stock-list-monthly')
+
+          <script src="{{ asset('assets/plugins/moment/moment.js')}}"></script>
+       <script src="{{ asset('assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js')}}"></script>
+       <script type="text/javascript">
+           jQuery('.datepicker').datepicker({
+              format: 'dd-mm-yyyy',
+              todayHighlight:true,
+              autoclose :true,
+
+          }); 
+           jQuery('.monthpicker').datepicker({
+               format: "mm-yyyy",
+               viewMode: "months", 
+               minViewMode: "months",
+                 todayHighlight:true
+           });
+           function showTable(){
+            //if($('#datatables').hasClass('hide')){
+              $('#datatables').removeClass('hide')
+            // }else{
+            //   $('#datatables').addClass('hide')
+            // }
+  
+           }
+       </script>
+       @endif 
+                @if(Request::segment(1) == 'purchase-sale-stock-list-daily'  || Request::segment(1) == 'purchase-sale-stock-list-monthly')
 
           <script src="{{ asset('assets/plugins/moment/moment.js')}}"></script>
        <script src="{{ asset('assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js')}}"></script>

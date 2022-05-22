@@ -294,21 +294,28 @@
         </ul>
       </li>
       <li class="has_sub">
-        <a href="javascript:void(0);" class="waves-effect"><i class="ti-calendar"></i> <span>SalePoint Product Stock List</span> <span class="menu-arrow"></span></a>
+        <a href="javascript:void(0);" class="waves-effect"><i class="ti-calendar"></i> <span>SalePoint Purchase Sale Stock List</span> <span class="menu-arrow"></span></a>
         <ul class="list-unstyled">
           <li><a href="{{url('purchase-sale-stock-list-daily')}}">Daily  Reports</a></li>
           <li><a href="{{url('purchase-sale-stock-list-monthly')}}">Monthly Reports</a></li>
         </ul>
       </li> 
+      <li class="has_sub">
+        <a href="javascript:void(0);" class="waves-effect"><i class="ti-calendar"></i> <span>SalePoint Product Stock List</span> <span class="menu-arrow"></span></a>
+        <ul class="list-unstyled">
+          <li><a href="{{url('product-stock-list-daily')}}">Daily  Reports</a></li>
+          <li><a href="{{url('product-stock-list-monthly')}}">Monthly Reports</a></li>
+        </ul>
+      </li> 
     
       <li class="has_sub">
-        <a href="{{url('downline-members')}}" class="waves-effect"><i class="ti-shopping-cart"></i><span>SalePoint Downline Member Purchase</span> </a>
+        <a href="{{url('salepoint-downline-member-purchase')}}" class="waves-effect"><i class="ti-shopping-cart"></i><span>SalePoint Downline Member Purchase</span> </a>
       </li> 
       <li class="has_sub">
-        <a href="{{url('downline-members')}}" class="waves-effect"><i class="ti-shopping-cart"></i><span>Downline Member Purchase</span> </a>
+        <a href="{{url('/downline-members-purchase')}}" class="waves-effect"><i class="ti-shopping-cart"></i><span>Downline Member Purchase</span> </a>
       </li> 
       <li class="has_sub">
-        <a href="{{url('downline-members')}}" class="waves-effect"><i class="ti-shopping-cart"></i><span>Salepoint Payout</span> </a>
+        <a href="{{url('salepoint-payout')}}" class="waves-effect"><i class="ti-shopping-cart"></i><span>Salepoint Payout</span> </a>
       </li> 
       <li class="has_sub">
         <a href="{{url('downline-members')}}" class="waves-effect"><i class="ti-shopping-cart"></i><span>Salepoint Payout List</span> </a>

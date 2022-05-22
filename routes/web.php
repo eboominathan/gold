@@ -41,9 +41,17 @@ Route::get('/product-sales-monthly', 'SalepointProductSalesController@product_sa
 Route::get('/downline-members-sale-details', 'SalepointProductSalesController@downline_members_sale_details');
 Route::get('/purchase-sale-stock-list-daily', 'SalepointPurchaseSaleStocksController@purchase_stocks_daily');
 Route::get('/purchase-sale-stock-list-monthly', 'SalepointPurchaseSaleStocksController@purchase_stocks_monthly');
-
-
 Route::get('/purchase-sale-stock-list-daily-view', 'SalepointPurchaseSaleStocksController@purchase_stocks_daily_view');
+Route::get('/product-stock-list-daily', 'SalepointProductStocksController@product_stocks_daily');
+Route::get('/product-stock-list-monthly', 'SalepointProductStocksController@product_stocks_monthly');
+
+Route::get('/salepoint-downline-member-purchase', 'SalepointDownlineMemberPurchaseController@index');
+Route::get('/view-downline-members-purchase', 'SalepointDownlineMemberPurchaseController@viewDownlineMemberPurchase');
+Route::get('/view-purchase-details', 'SalepointDownlineMemberPurchaseController@viewPurchaseDetails');
+Route::get('/downline-members-purchase', 'SalepointDownlineMemberPurchaseController@downlineMemberPurchase');
+Route::get('/salepoint-payout', 'SalepointPayoutController@index');
+
+
 
 
 
