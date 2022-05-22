@@ -13,10 +13,10 @@
 					<h4 class="page-title">{{$title}}</h4>
 					<ol class="breadcrumb">								
 						<li>
-							<a href="javascript:void(0);">SalePoint Members</a>
+							<a href="javascript:void(0);">Members</a>
 						</li>
 						<li class="active">
-							SalePoint Payout
+							Members Payout
 						</li>
 					</ol>
 				</div>
@@ -26,7 +26,7 @@
 					<div class="portlet">
 						<div class="portlet-heading bg-success">
 							<h3 class="portlet-title 	">
-								SalePoint Payout 
+								Members	 Payout 
 							</h3>
 							<div class="portlet-widgets">
 								<a href="javascript:;" data-toggle="reload"><i class="ion-refresh"></i></a>
@@ -75,13 +75,10 @@
 												<thead>
 													<tr>
 														<th>SNO</th>					 
-														<th>SALEPOINT ID NO</th>		
-														<th>NAME</th>		
-														<th>DIRECT DOWNLINE PURCHASE AMOUNT</th>
-														<th>DIRECT DOWNLINE PURCHASE COMMISION</th>
+														<th>MEMBER ID NO</th>		
+														<th>NAME</th>					 
 														<th>DOWNLINE PURCHASE AMOUNT</th>
 														<th>DOWNLINE PURCHASE COMMISION</th>
-														<th>TOTAL COMMISION EARNED</th>
 														<th>TDS (%)</th>
 														<th>SERVICE CHARGES (%)</th>
 														<th>OTHERS(%)</th>
@@ -96,9 +93,7 @@
 												</thead>
 												<tbody>
 													<tr>
-														<td></td>
-														<td></td>
-														<td></td>
+												 		
 														<td></td>
 														<td></td>
 														<td></td>
@@ -113,15 +108,14 @@
 														<td></td>
 										 
 														<td><input type="checkbox" name="" class="checked"></td>
-														<td><a href="{{'/salepoint-payout-list'}}" 
+														<td><a href="{{'/members-payout-list'}}" 
 															class="btn btn-info btn-xs"><i class="fa fa-eye"></i> View</a></td>
 													 
 													 
 													</tr>
 													<tr>
-														<td></td>
-														<td></td>
-														<td></td>
+														 
+										 
 														<td></td>
 														<td></td>
 														<td></td>
@@ -136,7 +130,7 @@
 														<td></td>
 										 
 														<td><input type="checkbox" name="" class="checked"></td>
-														<td><a href="{{'/salepoint-payout-list'}}" 
+														<td><a href="{{'/members-payout-list'}}" 
 															class="btn btn-info btn-xs"><i class="fa fa-eye"></i> View</a></td>			 
 													 		 
 													 
@@ -145,9 +139,8 @@
 													<tr>
 														<td colspan="3" align="center"><b>TOTAL</b></td>
 													 
-														<td></td>
-														<td></td>
-														<td></td>
+													 
+													 
 														<td></td>
 														<td></td>
 														<td></td>

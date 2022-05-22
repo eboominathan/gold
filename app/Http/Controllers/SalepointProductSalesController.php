@@ -21,5 +21,9 @@ class SalepointProductSalesController extends Controller
     	$title = 'SalePoint Product Sales Daily';
         return view('product_sales_daily',compact('title'));
     }
- 
+    public function downline_members_sale_details()
+    {
+        $title = 'Downline Members Product Sales Details';
+        return view('downline_members_sale_details',compact('title'));
+    }
 }

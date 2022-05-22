@@ -202,14 +202,14 @@
         <a href="#" id="btn-fullscreen" class="waves-effect waves-light"><i class="icon-size-fullscreen"></i></a>
       </li>
       <li class="hidden-xs">
-        <a href="#" class="right-bar-toggle waves-effect waves-light"><i class="icon-settings"></i></a>
+        <a href="#" class="right-bar-toggle waves-effect waves-light"><i class="ion-ios7-chatboxes-outline"></i></a>
       </li>
       <li class="dropdown top-menu-item-xs">
         <a href="" class="dropdown-toggle profile waves-effect waves-light" data-toggle="dropdown" aria-expanded="true"><img src="{{asset('assets/images/users/avatar-1.jpg')}}" alt="user-img" class="img-circle"> </a>
         <ul class="dropdown-menu">
-          <li><a href="javascript:void(0)"><i class="ti-user m-r-10 text-custom"></i> Profile</a></li>
+   {{--        <li><a href="javascript:void(0)"><i class="ti-user m-r-10 text-custom"></i> Profile</a></li> --}}
           <li><a href="javascript:void(0)"><i class="ti-settings m-r-10 text-custom"></i> Settings</a></li>
-          <li><a href="javascript:void(0)"><i class="ti-lock m-r-10 text-custom"></i> Lock screen</a></li>
+  
           <li class="divider"></li>
           <li><a href="{{url('/login')}}"><i class="ti-power-off m-r-10 text-danger"></i> Logout</a></li>
         </ul>
@@ -318,19 +318,19 @@
         <a href="{{url('salepoint-payout')}}" class="waves-effect"><i class="ti-shopping-cart"></i><span>Salepoint Payout</span> </a>
       </li> 
       <li class="has_sub">
-        <a href="{{url('downline-members')}}" class="waves-effect"><i class="ti-shopping-cart"></i><span>Salepoint Payout List</span> </a>
+        <a href="{{url('/salepoint-payout-list')}}" class="waves-effect"><i class="ti-shopping-cart"></i><span>Salepoint Payout List</span> </a>
       </li> 
       <li class="has_sub">
-        <a href="{{url('downline-members')}}" class="waves-effect"><i class="ti-shopping-cart"></i><span>Members Payout</span> </a>
+        <a href="{{url('members-payout')}}" class="waves-effect"><i class="ti-shopping-cart"></i><span>Members Payout</span> </a>
       </li> 
       <li class="has_sub">
-        <a href="{{url('downline-members')}}" class="waves-effect"><i class="ti-shopping-cart"></i><span>Members Payout List</span> </a>
+        <a href="{{url('members-payout-list ')}}" class="waves-effect"><i class="ti-shopping-cart"></i><span>Members Payout List</span> </a>
       </li> 
-       <li class="has_sub">
+    {{--    <li class="has_sub">
         <a href="{{url('downline-members')}}" class="waves-effect"><i class=" ti-comments"></i><span>Messages</span> </a>
-      </li>
+      </li> --}}
       <li class="has_sub">
-        <a href="{{url('downline-members')}}" class="waves-effect"><i class="ti-unlock"></i><span>Password</span> </a>
+        <a href="{{url('settings')}}" class="waves-effect"><i class="ti-unlock"></i><span>Password</span> </a>
       </li> 
     </ul>
     <div class="clearfix"></div>
@@ -343,7 +343,121 @@
 @yield('content')
 
 
+
+   <!-- Right Sidebar -->
+            <div class="side-bar right-bar nicescroll">
+                <h4 class="text-center">Chat</h4>
+                <div class="contact-list nicescroll">
+                    <ul class="list-group contacts-list">
+                        <li class="list-group-item">
+                            <a href="#">
+                                <div class="avatar">
+                                    <img src="assets/images/users/avatar-1.jpg" alt="">
+                                </div>
+                                <span class="name">Chadengle</span>
+                                <i class="fa fa-circle online"></i>
+                            </a>
+                            <span class="clearfix"></span>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="#">
+                                <div class="avatar">
+                                    <img src="assets/images/users/avatar-2.jpg" alt="">
+                                </div>
+                                <span class="name">Tomaslau</span>
+                                <i class="fa fa-circle online"></i>
+                            </a>
+                            <span class="clearfix"></span>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="#">
+                                <div class="avatar">
+                                    <img src="assets/images/users/avatar-3.jpg" alt="">
+                                </div>
+                                <span class="name">Stillnotdavid</span>
+                                <i class="fa fa-circle online"></i>
+                            </a>
+                            <span class="clearfix"></span>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="#">
+                                <div class="avatar">
+                                    <img src="assets/images/users/avatar-4.jpg" alt="">
+                                </div>
+                                <span class="name">Kurafire</span>
+                                <i class="fa fa-circle online"></i>
+                            </a>
+                            <span class="clearfix"></span>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="#">
+                                <div class="avatar">
+                                    <img src="assets/images/users/avatar-5.jpg" alt="">
+                                </div>
+                                <span class="name">Shahedk</span>
+                                <i class="fa fa-circle away"></i>
+                            </a>
+                            <span class="clearfix"></span>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="#">
+                                <div class="avatar">
+                                    <img src="assets/images/users/avatar-6.jpg" alt="">
+                                </div>
+                                <span class="name">Adhamdannaway</span>
+                                <i class="fa fa-circle away"></i>
+                            </a>
+                            <span class="clearfix"></span>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="#">
+                                <div class="avatar">
+                                    <img src="assets/images/users/avatar-7.jpg" alt="">
+                                </div>
+                                <span class="name">Ok</span>
+                                <i class="fa fa-circle away"></i>
+                            </a>
+                            <span class="clearfix"></span>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="#">
+                                <div class="avatar">
+                                    <img src="assets/images/users/avatar-8.jpg" alt="">
+                                </div>
+                                <span class="name">Arashasghari</span>
+                                <i class="fa fa-circle offline"></i>
+                            </a>
+                            <span class="clearfix"></span>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="#">
+                                <div class="avatar">
+                                    <img src="assets/images/users/avatar-9.jpg" alt="">
+                                </div>
+                                <span class="name">Joshaustin</span>
+                                <i class="fa fa-circle offline"></i>
+                            </a>
+                            <span class="clearfix"></span>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="#">
+                                <div class="avatar">
+                                    <img src="assets/images/users/avatar-10.jpg" alt="">
+                                </div>
+                                <span class="name">Sortino</span>
+                                <i class="fa fa-circle offline"></i>
+                            </a>
+                            <span class="clearfix"></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- /Right-bar -->
+            
+
+
 </div>
 <!-- END wrapper -->
 
 @include('layouts.footer')
+

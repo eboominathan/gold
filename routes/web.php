@@ -50,6 +50,12 @@ Route::get('/view-downline-members-purchase', 'SalepointDownlineMemberPurchaseCo
 Route::get('/view-purchase-details', 'SalepointDownlineMemberPurchaseController@viewPurchaseDetails');
 Route::get('/downline-members-purchase', 'SalepointDownlineMemberPurchaseController@downlineMemberPurchase');
 Route::get('/salepoint-payout', 'SalepointPayoutController@index');
+Route::get('/salepoint-payout-list', 'SalepointPayoutController@salepointPayoutList');
+Route::get('/product-purchase-monthly-statement', 'SalepointPayoutController@productPurchaseMonthly');
+Route::get('/members-payout', 'SalepointPayoutController@memberPayout');
+Route::get('/members-payout-list', 'SalepointPayoutController@membersPayoutList');
+Route::get('/settings', 'SettingsController@index');
+
 
 
 
