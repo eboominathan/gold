@@ -67,7 +67,7 @@
 												<thead>
 													<tr>
 														<th>SNO</th>					 
-														<th>SALEPOINT ID NO</th>		
+														<th>MEMBER ID NO</th>		
 														<th>NAME</th>		
 														<th>PAYOUT AMOUNT</th>
 														<th>BANK DETAILS</th>

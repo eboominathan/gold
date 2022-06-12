@@ -40,6 +40,26 @@
 
         {{-- @endif --}}
 
+        @if(Request::segment(1) == 'purchase-order-invoice')
+           <script src="{{ asset('assets/plugins/moment/moment.js')}}"></script>
+        <script src="{{ asset('assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js')}}"></script>
+        <script type="text/javascript">
+         jQuery('.datepicker').datepicker({
+          format: 'dd-mm-yyyy',
+          todayHighlight:true,
+          autoclose :true,
+
+        }); 
+         jQuery('.monthpicker').datepicker({
+           format: "mm-yyyy",
+           viewMode: "months", 
+           minViewMode: "months",
+           todayHighlight:true
+         });  
+  </script>
+
+
+        @endif
         @if(Request::segment(1) == 'salepoint-payout' || Request::segment(1) == 'salepoint-payout-list' || Request::segment(1) == 'members-payout' || Request::segment(1) == 'members-payout-list' )
 
         <script src="{{ asset('assets/plugins/moment/moment.js')}}"></script>

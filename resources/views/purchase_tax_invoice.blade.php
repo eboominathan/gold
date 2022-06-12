@@ -1,7 +1,7 @@
 <table  	>
 	<tr>
 		<th><img src="{{asset('assets/images/header-logo.png')}}" style="width: 325px;"></th>
-		<th><h2>Gold Herbal Care </h2></th>
+		<th><h2>GOLD  HERBAL CARE </h2></th>
 		<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
 	</tr>
 	<tr>
@@ -15,8 +15,8 @@
  @if(Request::get('monthly'))
  	
  	<hr>
- 	<div align="center">
- 	From 01-05-2022 12:00:00 AM to 31-05-2022 12:00:00 AM 
+ 	<div align="center">From <input type="text" class="form-control datepicker" readonly=""> To <input type="text" class="form-control datepicker" readonly="">
+ 	<input type="submit" name="" value="Submit">
  	</div>
  	<hr>
 
@@ -109,6 +109,7 @@
 <table  cellspacing="0" width="100%" border="1" style="border-collapse: collapse;" cellpadding="10">
 <tr>
 	<th>SNO</th>
+	<th width="8%">Date</th>
 	<th>Description</th>
 	<th>Quantity</th>
 	<th>Rate</th>
@@ -126,6 +127,7 @@
 <tbody id="purchase">
 	<tr>
 		<td>1</td>
+		<td>29-05-2022</td>
 		<td>Description</td>
 		<td>123</td>
 		<td>123</td>
@@ -142,6 +144,7 @@
 	</tr>
 	<tr>
 		<td>2</td>
+		<td>29-05-2022</td>
 		<td>Description</td>
 		<td>123</td>
 		<td>123</td>
@@ -158,6 +161,7 @@
 	</tr>
 	<tr>
 		<td>3</td>
+		<td>29-05-2022</td>
 		<td>Description</td>
 		<td>123</td>
 		<td>123</td>
@@ -174,6 +178,7 @@
 	</tr>
 	<tr>
 		<td>4</td>
+		<td>29-05-2022</td>
 		<td>Description</td>
 		<td>123</td>
 		<td>123</td>
@@ -190,6 +195,7 @@
 	</tr>
 	<tr>
 		<td>5</td>
+		<td>29-05-2022</td>
 		<td>Description</td>
 		<td>123</td>
 		<td>123</td>
@@ -207,6 +213,7 @@
 </tbody>
  
 	<tr>
+		<td>-</td>
 		<td>-</td>
 		<td>-</td>
 		<td>123</td>
@@ -228,6 +235,7 @@
 	<tr style="border-top: none;">
 		<td style="border:none"></td>
 		<td style="border:none"></td>
+		<td style="border:none"></td>
 		<td style="border:none">&nbsp;&nbsp;</td>
 		<td style="border:none">&nbsp;&nbsp;</td>
 		<td style="border:none">&nbsp;&nbsp;</td>
@@ -242,6 +250,7 @@
 		<td ><b>Rs. 150</b></td>
 	</tr>
 	<tr>
+		<td style="border:none"></td>
 		<td style="border:none"></td>
 		<td style="border:none"></td>
 		<td style="border:none">&nbsp;&nbsp;</td>

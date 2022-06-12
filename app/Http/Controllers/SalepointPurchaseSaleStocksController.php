@@ -31,4 +31,9 @@ class SalepointPurchaseSaleStocksController extends Controller
     	$title = 'SalePoint Purchase Sale Stocks Monthly';
         return view('purchase_stocks_monthly',compact('title'));
     }
+     public function purchase_stocks_monthly_view()
+    {
+        $title = 'SalePoint Purchase Sale Stocks Monthly';
+        return view('purchase_stocks_monthly_view',compact('title'));
+    }
 }

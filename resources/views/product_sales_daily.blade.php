@@ -16,7 +16,7 @@
 							<a href="javascript:void(0);">SalePoint Members</a>
 						</li>
 						<li class="active">
-							Product Sales Details Daily
+							SalePoint Product Sales Details Daily
 						</li>
 					</ol>
 				</div>
@@ -26,7 +26,7 @@
 					<div class="portlet">
 						<div class="portlet-heading bg-success">
 							<h3 class="portlet-title 	">
-								Product Sales Details Daily
+							SalePoint	Product Sales Details Daily
 							</h3>
 							<div class="portlet-widgets">
 								<a href="javascript:;" data-toggle="reload"><i class="ion-refresh"></i></a>
@@ -45,7 +45,7 @@
 											<table cellpadding="10" class="table">
 												<tr>
 													<td>
-														<label class="control-label">Select Date  </label>
+														<label class="control-label">Select Month  </label>
 													</td>
 													<td>
 														<input type="text" class="form-control datepicker" readonly="">
@@ -67,6 +67,7 @@
 												<thead>
 													<tr>
 														<th>SNO</th>					 
+														<th>DATE</th>					 
 														<th>SALEPOINT ID No</th>		
 														<th>PRODUCT VALUE</th>
 														<th>TAXABLE AMOUNT</th>
@@ -76,6 +77,7 @@
 												<tbody>
 													<tr>
 														<td>1</td>
+														<td>29-05-2022</td>
 														<td><a href="{{url('/downline-members-sale-details')}}">13132</a></td>
 													 
 														<td>1200</td>
@@ -84,6 +86,7 @@
 													</tr>
 													<tr>
 														<td>2</td>
+														<td>29-05-2022</td>
 														<td><a href="{{url('/downline-members-sale-details')}}">13135</a></td>
 													 
 														<td>1200</td>
@@ -94,6 +97,7 @@
 												</tbody>
 												<tfoot>
 													<tr>
+														<td>&nbsp;</td>
 														<td>&nbsp;</td>
 														<td>&nbsp;</td>
 														<td>&nbsp;</td>

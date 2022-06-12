@@ -39,14 +39,14 @@
 			@endif
 	 	
 		<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-		<th align="right">Sponsor Name : JOHN</th>
+		<th align="right">Sponsor ID NO : 5646</th>
 		  
 	</tr>
 	<tr>
 			<th align="left">To</th>	 
 	 	
 		<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-			<th align="right">@if(!Request::get('members')) Sale Point @endif ID No : SP0001</th>
+			<th align="right">@if(!Request::get('members')) Sale Point @elseif(Request::get('members'))  @endif ID No : SP0001</th>
 	
 		  
 	</tr>
@@ -125,7 +125,7 @@
 		@endif
 		<th>DOWNLINE PURCHASE AMOUNT</th>
 		<th>DOWNLINE PURCHASE COMMISION</th>
-		<th>TOTAL COMMISION EARNED</th>
+{{-- 		<th>TOTAL COMMISION EARNED</th> --}}
 		<th>DEDUCTIONS</th>	 
 </tr>
 <tbody id="purchase">
@@ -140,7 +140,7 @@
 		<td>123</td>
 		<td>123</td>
 		<td>123</td>
-		<td>123</td>
+		{{-- <td>123</td> --}}
  
 	</tr>
 	 <tr style="border-bottom: none;border-top: none">
@@ -154,7 +154,7 @@
 		<td>&nbsp;</td>
 		<td>&nbsp;</td>
 		<td>&nbsp;</td>
-		<td>&nbsp;</td>
+		{{-- <td>&nbsp;</td> --}}
  
 	</tr>
 	<tr style="border-bottom: none;border-top: none">
@@ -168,7 +168,7 @@
 		<td>&nbsp;</td>
 		<td>&nbsp;</td>
 		<td>&nbsp;</td>
-		<td>&nbsp;</td>
+		{{-- <td>&nbsp;</td> --}}
  
 	</tr>
 	<tr style="border-bottom: none;border-top: none">
@@ -182,7 +182,7 @@
 		<td>&nbsp;</td>
 		<td>&nbsp;</td>
 		<td>&nbsp;</td>
-		<td>&nbsp;</td>
+		{{-- <td>&nbsp;</td> --}}
  
 	</tr>
 	<tr style="border-bottom: none;border-top: none">
@@ -196,7 +196,7 @@
 		<td>&nbsp;</td>
 		<td>&nbsp;</td>
 		<td>&nbsp;</td>
-		<td>&nbsp;</td>
+		{{-- <td>&nbsp;</td> --}}
  
 	</tr>
 	<tr style="border-bottom: none;border-top: none">
@@ -210,7 +210,7 @@
 		<td>&nbsp;</td>
 		<td>&nbsp;</td>
 		<td>&nbsp;</td>
-		<td>&nbsp;</td>
+		{{-- <td>&nbsp;</td> --}}
  
 	</tr>
 	<tr style="border-bottom: none;border-top: none">
@@ -224,7 +224,7 @@
 		<td>&nbsp;</td>
 		<td>&nbsp;</td>
 		<td>&nbsp;</td>
-		<td>&nbsp;</td>
+		{{-- <td>&nbsp;</td> --}}
  
 	</tr>
 	<tr style="border-bottom: none;border-top: none">
@@ -238,7 +238,7 @@
 		<td>&nbsp;</td>
 		<td>&nbsp;</td>
 		<td>&nbsp;</td>
-		<td>&nbsp;</td>
+		{{-- <td>&nbsp;</td> --}}
  
 	</tr>
 	<tr style="border-bottom: none;border-top: none">
@@ -252,7 +252,7 @@
 		<td>&nbsp;</td>
 		<td>&nbsp;</td>
 		<td>&nbsp;</td>
-		<td>&nbsp;</td>
+		{{-- <td>&nbsp;</td> --}}
  
 	</tr>
 	<tr style="border-top: none">
@@ -266,7 +266,7 @@
 		<td>&nbsp;</td>
 		<td>&nbsp;</td>
 		<td>&nbsp;</td>
-		<td>&nbsp;</td>
+		{{-- <td>&nbsp;</td> --}}
  
 	</tr>
  
@@ -281,7 +281,7 @@
 		@endif
 		
 		<td ><b>123</b></td>
-		<td ><b>123</b></td>
+		{{-- <td ><b>123</b></td> --}}
 	</tr>
 	<tr> 
 		<td align="left" colspan="9"><b>SUB TOTAL  : </b></td>

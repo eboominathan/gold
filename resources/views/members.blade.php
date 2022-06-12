@@ -79,7 +79,7 @@
 													<tr>
 														<th>SNO</th>
 														<th>NAME</th>
-														<th>SALEPOINT ID No</th>
+														<th>MEMBER ID</th>
 														<th>PASSWORD</th>
 														<th>DATEOF JOINING</th>
 														<th>SPONSOR ID NO</th>
@@ -92,8 +92,8 @@
 												<tbody>
 													<tr>
 														<td>1</td>
-														<td><a href="{{url('/view-member-info')}}">Nixon</a></td>
-														<td>123465</td>
+														<td>Nixon</td>
+														<td><a href="{{url('/view-member-info')}}">123465</a></td>
 														<td>Password</td>
 														<td>2011/04/25</td>
 														<td>61</td>
@@ -103,8 +103,8 @@
 													</tr>
 													<tr>
 														<td>2</td>
-															<td><a href="{{url('/view-member-info')}}">Garrett</a></td>
-														<td>123465</td>
+														<td>Garrett</td>
+															<td><a href="{{url('/view-member-info')}}">546532</a></td>
 														<td>Password</td>
 														<td>2011/04/25</td>
 														<td>61</td>

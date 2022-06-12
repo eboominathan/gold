@@ -67,8 +67,8 @@
 												<thead>
 													<tr>
 														<th>SNO</th>
-														<th>SPONSOR ID NO</th>
 														<th>SALEPOINT ID No</th>
+														<th>SPONSOR ID NO</th>
 														<th>MEMBER ID No</th>
 														<th>PURCHASE DATE</th>
 														<th>PRODUCT QUANTITY</th>
