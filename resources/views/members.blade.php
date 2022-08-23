@@ -92,7 +92,7 @@
 												<tbody>
 													<tr>
 														<td>1</td>
-														<td>Nixon</td>
+															<td><a href="{{url('/view-member-info')}}">Nixon</a></td>
 														<td><a href="{{url('/view-member-info')}}">123465</a></td>
 														<td>Password</td>
 														<td>2011/04/25</td>
@@ -103,7 +103,7 @@
 													</tr>
 													<tr>
 														<td>2</td>
-														<td>Garrett</td>
+															<td><a href="{{url('/view-member-info')}}">Garrett</a></td>
 															<td><a href="{{url('/view-member-info')}}">546532</a></td>
 														<td>Password</td>
 														<td>2011/04/25</td>

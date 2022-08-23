@@ -103,6 +103,10 @@
 														<td>123</td>
 														<td>123</td>
 														<td>10000</td>
+														@if(Request::get('monthly'))	
+														<td></td>
+														<td></td>
+														@endif
 													</tr>
 													
 												</tbody>

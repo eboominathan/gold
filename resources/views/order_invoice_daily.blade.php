@@ -80,7 +80,7 @@
 													<tr>
 														<td>1</td>
 														<td>13132</td>
-														<td><a href="{{url('/purchse-order-invoice')}}">1235</a></td>
+														<td><a href="{{url('/purchase-order-invoice')}}">1235</a></td>
 														<td>18-05-2022</td>
 														<td>5</td>
 														<td>1200</td>
@@ -90,7 +90,7 @@
 													<tr>
 														<td>2</td>
 														<td>13133</td>
-														<td><a href="{{url('/purchse-order-invoice')}}">1231</a></td>
+														<td><a href="{{url('/purchase-order-invoice')}}">1231</a></td>
 														<td>18-05-2022</td>
 														<td>5</td>
 														<td>1200</td>

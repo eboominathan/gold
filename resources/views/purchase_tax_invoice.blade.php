@@ -109,7 +109,7 @@
 <table  cellspacing="0" width="100%" border="1" style="border-collapse: collapse;" cellpadding="10">
 <tr>
 	<th>SNO</th>
-	<th width="8%">Date</th>
+ 
 	<th>Description</th>
 	<th>Quantity</th>
 	<th>Rate</th>
@@ -127,7 +127,7 @@
 <tbody id="purchase">
 	<tr>
 		<td>1</td>
-		<td>29-05-2022</td>
+		
 		<td>Description</td>
 		<td>123</td>
 		<td>123</td>
@@ -144,7 +144,7 @@
 	</tr>
 	<tr>
 		<td>2</td>
-		<td>29-05-2022</td>
+		
 		<td>Description</td>
 		<td>123</td>
 		<td>123</td>
@@ -161,7 +161,7 @@
 	</tr>
 	<tr>
 		<td>3</td>
-		<td>29-05-2022</td>
+		
 		<td>Description</td>
 		<td>123</td>
 		<td>123</td>
@@ -178,7 +178,7 @@
 	</tr>
 	<tr>
 		<td>4</td>
-		<td>29-05-2022</td>
+		
 		<td>Description</td>
 		<td>123</td>
 		<td>123</td>
@@ -195,7 +195,7 @@
 	</tr>
 	<tr>
 		<td>5</td>
-		<td>29-05-2022</td>
+		
 		<td>Description</td>
 		<td>123</td>
 		<td>123</td>
@@ -213,9 +213,9 @@
 </tbody>
  
 	<tr>
-		<td>-</td>
-		<td>-</td>
-		<td>-</td>
+		<td></td>
+	 
+		<td> </td>
 		<td>123</td>
 		<td>123</td>
 		<td>123</td>
@@ -233,7 +233,7 @@
  
  
 	<tr style="border-top: none;">
-		<td style="border:none"></td>
+	 
 		<td style="border:none"></td>
 		<td style="border:none"></td>
 		<td style="border:none">&nbsp;&nbsp;</td>
@@ -250,7 +250,7 @@
 		<td ><b>Rs. 150</b></td>
 	</tr>
 	<tr>
-		<td style="border:none"></td>
+	 
 		<td style="border:none"></td>
 		<td style="border:none"></td>
 		<td style="border:none">&nbsp;&nbsp;</td>
@@ -269,6 +269,6 @@
 
 </table>
 <br>
-	<div align="center" onclick="window.print()">
+{{-- 	<div align="center" onclick="window.print()">
 <button class="btn btn-primary" align="center">Print</button>
-</div>
+</div> --}}
