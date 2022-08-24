@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" >
-  <link rel="shortcut icon" href="assets/images/favicon_1.ico">
+{{--   <link rel="shortcut icon" href="assets/images/favicon_1.ico"> --}}
 
   <title>{{ $title }} .::Gold Herbal Care::.</title>
 

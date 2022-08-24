@@ -17,6 +17,9 @@
 
 Auth::routes();
 
+Route::resource('/users', 'UserController'); 
+Route::resource('/sale-point-master', 'SalePointMasterController'); 
+
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/dashboard', 'DashboardController@index');
 Route::get('/generate-pin', 'PinController@index');

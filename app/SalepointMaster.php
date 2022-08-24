@@ -2,12 +2,11 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Model;
 
-class User extends Authenticatable
+class SalepointMaster extends Model
 {
-    use Notifiable;
+    protected $table = 'sale_points';
 
     /**
      * The attributes that are mass assignable.
@@ -15,21 +14,14 @@ class User extends Authenticatable
      * @var array
      */
          protected $fillable = [
-        'first_name',
-        'last_name',      
-        'email', 
-        'type', 
-        'sale_point_id', 
-        'referal_id', 
-        'email_sent', 
-        'loggedin', 
+        'name',        
         'status', 
         'created_by', 
         'updated_by'
     ];
 
-   
-     /**
+
+/**
      * The attributes that should be cast to native types.
      *
      * @var array
@@ -46,6 +38,8 @@ class User extends Authenticatable
     protected $dates = [
         'deleted_at'
     ];
+
+
 
 
 }

@@ -20,6 +20,11 @@
 
 
 
+<script src="{{ asset('assets/plugins/notifyjs/js/notify.js')}}"></script>
+ <script src="{{ asset('assets/plugins/notifications/notify-metro.js')}}"></script>
+
+
+
 {{-- @if(Request::segment(2) == 'generate-pin') --}}
  {{--    <script src="{{ asset('assets/plugins/bootstrap-tagsinput/js/bootstrap-tagsinput.min.js')}}"></script>
     <script src="{{ asset('assets/plugins/switchery/js/switchery.min.js')}}"></script>
@@ -40,6 +45,13 @@
 
         {{-- @endif --}}
 
+        <script type="text/javascript">
+          var baseUrl = "{{ url('/')}}";
+        </script>
+
+        @if(Request::segment(1) == 'sale-point-master')
+             <script src="{{ asset('js/custom/salepoint_master.js')}}"></script>
+        @endif
         @if(Request::segment(1) == 'purchase-order-invoice')
            <script src="{{ asset('assets/plugins/moment/moment.js')}}"></script>
         <script src="{{ asset('assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js')}}"></script>
