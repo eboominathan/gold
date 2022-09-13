@@ -22,6 +22,7 @@
 
 <script src="{{ asset('assets/plugins/notifyjs/js/notify.js')}}"></script>
  <script src="{{ asset('assets/plugins/notifications/notify-metro.js')}}"></script>
+ <script src="{{ asset('assets/plugins/bootstrap-sweetalert/sweet-alert.js')}}"></script>
 
 
 
@@ -50,6 +51,8 @@
         </script>
 
         @if(Request::segment(1) == 'sale-point-master')
+        <script src="{{ asset('assets/datatables/js/jquery.dataTables.min.js')}}"></script>
+        <script src="{{ asset('assets/datatables/js/dataTables.bootstrap.js')}}"></script>
              <script src="{{ asset('js/custom/salepoint_master.js')}}"></script>
         @endif
         @if(Request::segment(1) == 'purchase-order-invoice')

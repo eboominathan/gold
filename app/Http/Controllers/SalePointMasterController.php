@@ -7,6 +7,8 @@ use App\Services\SalepointMasterService;
 use App\Traits\ResponseTrait;
 use Illuminate\Http\Request;
 use Validator;
+use Yajra\DataTables\DataTables;
+use DB;
 
 class SalePointMasterController extends Controller
 {
@@ -85,7 +87,18 @@ class SalePointMasterController extends Controller
      */
     public function show(SalepointMaster $salepointMaster)
     {
-        //
+         $i = 0;
+        $data = Datatables::of(SalepointMaster::all())
+          ->addIndexColumn()
+        ->addColumn('action', function($row) {
+                return '<button class="btn btn-primary btn-sm" 
+                onclick="edit_salepoint('.$row->id.')"
+                >Edit</button>&nbsp;
+                <button class="btn btn-danger btn-sm" 
+                onclick="delete_salepoint('.$row->id.')"
+                 >Delete</button>';
+            })->make(true);
+        return $data;
     }
 
     /**
@@ -94,9 +107,18 @@ class SalePointMasterController extends Controller
      * @param  \App\SalepointMaster  $salepointMaster
      * @return \Illuminate\Http\Response
      */
-    public function edit(SalepointMaster $salepointMaster)
+    public function edit($id)
     {
-        //
+        $result = $this->salepointMasterService->getSalepointMasterById($id);    
+         if(!empty($result)){
+            $this->success();
+            $this->setData("data",$result);
+            $this->setData("message",'SalePoint fetched Successfully');
+        }else{
+            $this->failure();
+            $this->setData("message",'SalePoint fetching failed');
+        }
+        return response()->json($this->setResultData());  
     }
 
     /**
@@ -117,9 +139,18 @@ class SalePointMasterController extends Controller
      * @param  \App\SalepointMaster  $salepointMaster
      * @return \Illuminate\Http\Response
      */
-    public function destroy(SalepointMaster $salepointMaster)
+    public function destroy($id)
     {
-        //
+        $result = $this->salepointMasterService->deleteSalepointMasterById($id);    
+         if(!empty($result)){
+            $this->success();
+            $this->setData("data",$result);
+            $this->setData("message",'SalePoint deleted Successfully');
+        }else{
+            $this->failure();
+            $this->setData("message",'SalePoint deleting failed');
+        }
+        return response()->json($this->setResultData()); 
     }
 
 

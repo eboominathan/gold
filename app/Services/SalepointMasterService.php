@@ -10,8 +10,8 @@ class SalepointMasterService {
 		$data['name'] = $params['name'];
 		$data['created_by'] = 1;
 		$data['updated_by'] = 1;
-		$id = $params['hidden_id'];
-		if(empty($params['hidden_id'])){
+		$id = $params['id'];
+		if(empty($params['id'])){
 			$result =  SalepointMaster::create($data);
 			$id = $result->id;
 		}else{ 
@@ -19,6 +19,14 @@ class SalepointMasterService {
 		}
 		return $id;		
 
+	}
+
+
+	public function getSalepointMasterById($id){
+		return SalepointMaster::find($id);
+	}
+		public function deleteSalepointMasterById($id){
+		return SalepointMaster::find($id)->delete();
 	}
 
 }  

@@ -19,6 +19,9 @@ Auth::routes();
 
 Route::resource('/users', 'UserController'); 
 Route::resource('/sale-point-master', 'SalePointMasterController'); 
+Route::get('/sale-point-master/list', 'SalePointMasterController@show'); 
+Route::get('/sale-point-master/edit/{id}', 'SalePointMasterController@edit'); 
+Route::get('/sale-point-master/delete/{id}', 'SalePointMasterController@destroy'); 
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/dashboard', 'DashboardController@index');

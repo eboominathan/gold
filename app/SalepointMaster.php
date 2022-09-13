@@ -3,9 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
+use Illuminate\Database\Eloquent\SoftDeletes;
 class SalepointMaster extends Model
 {
+     use SoftDeletes;
+     
     protected $table = 'sale_points';
 
     /**
@@ -27,8 +29,8 @@ class SalepointMaster extends Model
      * @var array
      */
     protected $casts = [
-        'created_at' => 'datetime:d-M-Y',
-        'updated_at' => 'datetime:d-M-Y'
+        'created_at' ,
+        'updated_at' 
     ];
      /**
      * The attributes dates that should be added.

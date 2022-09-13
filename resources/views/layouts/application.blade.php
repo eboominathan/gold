@@ -40,6 +40,7 @@
   <link href="{{ asset('assets/css/icons.css')}}" rel="stylesheet" type="text/css" />
   <link href="{{ asset('assets/css/pages.css')}}" rel="stylesheet" type="text/css" />
   <link href="{{ asset('assets/css/responsive.css')}}" rel="stylesheet" type="text/css" />
+  <link href="{{ asset('assets/plugins/bootstrap-sweetalert/sweet-alert.css')}}" rel="stylesheet" type="text/css" />
  
 
 
@@ -243,7 +244,16 @@
       </li> 
        <li class="has_sub">
         <a href="{{url('application-form')}}" class="waves-effect"><i class="ti-user"></i><span> Application Form </span> </a>
+      </li>
+        <li class="has_sub">
+        <a href="javascript:void(0);" class="waves-effect"><i class="ti-user"></i> <span> Masters</span> <span class="menu-arrow"></span></a>
+        <ul class="list-unstyled">
+          <li> <a href="{{url('sale-point-master')}}" class="waves-effect"><i class="ti-user"></i><span> Salepoint Master</span> </a></li>          
+        </ul>
       </li> 
+
+
+
         <li class="has_sub">
         <a href="javascript:void(0);" class="waves-effect"><i class="ti-user"></i> <span> SalePoint Members </span> <span class="menu-arrow"></span></a>
         <ul class="list-unstyled">
