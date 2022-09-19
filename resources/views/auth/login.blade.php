@@ -1,44 +1,56 @@
 @extends('layouts.app')
 
 @section('content')
- 
-  <link href=" {{ url('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
-  <link href=" {{ url('assets/css/core.css') }}" rel="stylesheet" type="text/css" />
-  <link href=" {{ url('assets/css/components.css') }}" rel="stylesheet" type="text/css" />
-  <link href=" {{ url('assets/css/icons.css') }}" rel="stylesheet" type="text/css" />
-  <link href=" {{ url('assets/css/pages.css') }}" rel="stylesheet" type="text/css" />
-  <link href=" {{ url('assets/css/responsive.css') }}" rel="stylesheet" type="text/css" />
-  <link href=" {{ url('assets/css/custom.css') }}" rel="stylesheet" type="text/css" />
-  <div class="account-pages"></div>
-        <div class="clearfix"></div>
-        <div class="wrapper-page" >
-          <div class=" card-box">
-            <div class="panel-heading"> 
-                <h3 class="text-center"> Sign In to <strong class="text-custom">Gold Herbal Care</strong> </h3>
-            </div> 
+
+<link href=" {{ url('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+<link href=" {{ url('assets/css/core.css') }}" rel="stylesheet" type="text/css" />
+<link href=" {{ url('assets/css/components.css') }}" rel="stylesheet" type="text/css" />
+<link href=" {{ url('assets/css/icons.css') }}" rel="stylesheet" type="text/css" />
+<link href=" {{ url('assets/css/pages.css') }}" rel="stylesheet" type="text/css" />
+<link href=" {{ url('assets/css/responsive.css') }}" rel="stylesheet" type="text/css" />
+<link href=" {{ url('assets/css/custom.css') }}" rel="stylesheet" type="text/css" />
+<div class="account-pages"></div>
+<div class="clearfix"></div>
+<div class="wrapper-page" >
+  <div class=" card-box">
+    <div class="panel-heading"> 
+        <h3 class="text-center"> Sign In to <strong class="text-custom">Gold Herbal Care</strong> </h3>
+    </div> 
 
 
-            <div class="panel-body">
+    <div class="panel-body">
+        @if (\Session::has('success'))
+        <div class="alert alert-success">
+            {!! \Session::get('success') !!} 
             
-            <form class="form-horizontal m-t-20" id="form" method="get" id="login_form"  action="{{ url('/dashboard')}}">                
-                <div class="form-group ">
-                    <div class="col-xs-12">
-                        <input class="form-control" type="text" required="" placeholder="Username" name="username" id="username">
-                        <span class="help-block"></span>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-xs-12">
-                        <input class="form-control" type="password" required="" placeholder="Password" name="password" id="password">
-                        <span class="help-block"></span>
-                    </div>
-                </div>           
-                
-                <div class="form-group text-center m-t-40">
-                    <div class="col-xs-12">
-                        <button type="submit" class="btn btn-info btn-block text-uppercase waves-effect waves-light" id="signin">Log In</button>
-                    </div>
-                </div>
+       </div>
+       @endif
+       @if (\Session::has('message'))
+        <div class="alert alert-danger">         
+               {!! \Session::get('message') !!}             
+       </div>
+       @endif
+
+       <form class="form-horizontal m-t-20" id="form" method="post" id="login_form"  action="{{ url('/authenticate')}}">  
+        @csrf()             
+        <div class="form-group ">
+            <div class="col-xs-12">
+                <input class="form-control" type="email" required="" placeholder="Username" name="email" id="email" required>
+                <span class="help-block"></span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-xs-12">
+                <input class="form-control" type="password" required="" placeholder="Password" name="password" id="password">
+                <span class="help-block"></span>
+            </div>
+        </div>           
+
+        <div class="form-group text-center m-t-40">
+            <div class="col-xs-12">
+                <button type="submit" class="btn btn-info btn-block text-uppercase waves-effect waves-light" id="signin">Log In</button>
+            </div>
+        </div>
 
                 <!-- <div class="form-group m-t-30 m-b-0">
                     <div class="col-sm-12">
@@ -46,9 +58,9 @@
                     </div>
                 </div> -->
             </form>             
-            </div>   
-            </div>                              
-        </div>
+        </div>   
+    </div>                              
+</div>
 
 {{-- <div class="container">
     <div class="row justify-content-center">

@@ -41,15 +41,7 @@ class SalePointMasterController extends Controller
      return view('sale_point_master',compact('title'));
  }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-
-    }
+  
 
     /**
      * Store a newly created resource in storage.

@@ -18,6 +18,8 @@ class User extends Authenticatable
         'first_name',
         'last_name',      
         'email', 
+        'password', 
+        'hidden', 
         'type', 
         'sale_point_id', 
         'referal_id', 

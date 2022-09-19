@@ -22,7 +22,8 @@ class CreateSalePointsTable extends Migration
             $table->unsignedInteger('updated_by')->nullable()->comment('Ref to Users');
             $table->foreign('updated_by')->references('id')->on('users');
             $table->softDeletes();
-            $table->timestamps();
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'));
         });
     }
 

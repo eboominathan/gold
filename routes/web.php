@@ -16,12 +16,25 @@
 // });
 
 Auth::routes();
+Route::post('/authenticate','Auth\LoginController@authenticate');
 
+Route::middleware(['auth'])->group(function() {
+
+Route::get('/logout', 'Auth\LoginController@logout'); 
 Route::resource('/users', 'UserController'); 
 Route::resource('/sale-point-master', 'SalePointMasterController'); 
 Route::get('/sale-point-master/list', 'SalePointMasterController@show'); 
 Route::get('/sale-point-master/edit/{id}', 'SalePointMasterController@edit'); 
 Route::get('/sale-point-master/delete/{id}', 'SalePointMasterController@destroy'); 
+
+
+
+
+Route::get('/sale-point-member/create', 'SalePointMemberController@add'); 
+Route::post('/sale-point-member/store-salepoint-member', 'SalePointMemberController@storeSalepointMember'); 
+Route::post('/sale-point-member-list', 'SalePointMemberController@list'); 
+
+
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/dashboard', 'DashboardController@index');
@@ -62,7 +75,7 @@ Route::get('/product-purchase-monthly-statement', 'SalepointPayoutController@pro
 Route::get('/members-payout', 'SalepointPayoutController@memberPayout');
 Route::get('/members-payout-list', 'SalepointPayoutController@membersPayoutList');
 Route::get('/settings', 'SettingsController@index');
-
+});
 
 
 
@@ -70,3 +83,10 @@ Route::get('/settings', 'SettingsController@index');
 
 /* Products */
 Route::resource('products', ProductController::class);
+
+Route::get('migrate', function () {
+    \Artisan::call('migrate:fresh');
+    \Artisan::call('db:seed');
+    dd("db updated");
+
+});

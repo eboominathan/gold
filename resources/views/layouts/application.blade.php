@@ -212,7 +212,7 @@
           <li><a href="javascript:void(0)"><i class="ti-settings m-r-10 text-custom"></i> Settings</a></li>
   
           <li class="divider"></li>
-          <li><a href="{{url('/login')}}"><i class="ti-power-off m-r-10 text-danger"></i> Logout</a></li>
+          <li><a href="{{url('/logout')}}"><i class="ti-power-off m-r-10 text-danger"></i> Logout</a></li>
         </ul>
       </li>
     </ul>
@@ -236,16 +236,16 @@
        <li class="has_sub">
         <a href="{{url('dashboard')}}" class="waves-effect"><i class="ti-home"></i><span> Dashboard </span> </a>
       </li> 
-        <li class="has_sub">
+        <li class="has_sub hidden">
         <a href="javascript:void(0);" class="waves-effect"><i class="ti-pin-alt"></i> <span> Pin Bank </span> <span class="menu-arrow"></span></a>
         <ul class="list-unstyled">
           <li><a href="{{url('generate-pin')}}">Generate Pin</a></li>                                  
         </ul>
       </li> 
-       <li class="has_sub">
+       <li class="has_sub hidden">
         <a href="{{url('application-form')}}" class="waves-effect"><i class="ti-user"></i><span> Application Form </span> </a>
       </li>
-        <li class="has_sub">
+        <li class="has_sub hidden">
         <a href="javascript:void(0);" class="waves-effect"><i class="ti-user"></i> <span> Masters</span> <span class="menu-arrow"></span></a>
         <ul class="list-unstyled">
           <li> <a href="{{url('sale-point-master')}}" class="waves-effect"><i class="ti-user"></i><span> Salepoint Master</span> </a></li>          
@@ -253,7 +253,7 @@
       </li> 
 
 
-
+      @if(Auth::user()->type == 'superadmin')
         <li class="has_sub">
         <a href="javascript:void(0);" class="waves-effect"><i class="ti-user"></i> <span> SalePoint Members </span> <span class="menu-arrow"></span></a>
         <ul class="list-unstyled">
@@ -261,7 +261,8 @@
           <li><a href="{{url('sale-point-address')}}">SalePoint Address Details</a></li>
         </ul>
       </li> 
-      <li class="has_sub">
+      @endif
+      <li class="has_sub hidden">
         <a href="javascript:void(0);" class="waves-effect"><i class="ti-user"></i> <span> Members </span> <span class="menu-arrow"></span></a>
         <ul class="list-unstyled">
           <li><a href="{{url('members')}}">Members</a></li>                                  
@@ -269,48 +270,48 @@
           <li><a href="{{url('members/address')}}">Address Details</a></li>
         </ul>
       </li> 
-       <li class="has_sub">
+       <li class="has_sub hidden">
         <a href="{{url('salepoint-downline-members')}}" class="waves-effect"><i class="ti-user"></i><span> Salepoint Downline Member Details </span> </a>
       </li>
-     {{--    <li class="has_sub">
+     {{--    <li class="has_sub hidden">
         <a href="{{url('downline-members')}}" class="waves-effect"><i class="ti-user"></i><span>Downline Member Details </span> </a>
       </li>  --}}
-      <li class="has_sub">
+      <li class="has_sub hidden">
         <a href="{{url('products')}}" class="waves-effect"><i class="ti-image"></i><span> Product Details </span> </a>
       </li>    
-         <li class="has_sub">
+         <li class="has_sub hidden">
         <a href="{{url('salepoint-purchase-order')}}" class="waves-effect"><i class="ti-shopping-cart"></i><span>SalePoint Purchasing Order</span> </a>
       </li> 
       
-       <li class="has_sub">
+       <li class="has_sub hidden">
         <a href="javascript:void(0);" class="waves-effect"><i class="ti-calendar"></i> <span> Order Invoice</span> <span class="menu-arrow"></span></a>
         <ul class="list-unstyled">
           <li><a href="{{url('order-invoice-daily')}}">Daily  Reports</a></li>
           <li><a href="{{url('order-invoice-monthly')}}">Monthly Reports</a></li>
         </ul>
       </li> 
-      <li class="has_sub">
+      <li class="has_sub hidden">
         <a href="javascript:void(0);" class="waves-effect"><i class="ti-calendar"></i> <span> Tax Invoice</span> <span class="menu-arrow"></span></a>
         <ul class="list-unstyled">
           <li><a href="{{url('tax-invoice-daily')}}">Daily  Reports</a></li>
           <li><a href="{{url('tax-invoice-monthly')}}">Monthly Reports</a></li>
         </ul>
       </li> 
-      <li class="has_sub">
+      <li class="has_sub hidden">
         <a href="javascript:void(0);" class="waves-effect"><i class="ti-calendar"></i> <span> SalePoint Product Sales Details</span> <span class="menu-arrow"></span></a>
         <ul class="list-unstyled">
           <li><a href="{{url('product-sales-daily')}}">Daily  Reports</a></li>
           <li><a href="{{url('product-sales-monthly')}}">Monthly Reports</a></li>
         </ul>
       </li>
-      <li class="has_sub">
+      <li class="has_sub hidden">
         <a href="javascript:void(0);" class="waves-effect"><i class="ti-calendar"></i> <span>SalePoint Purchase Sale Stock List</span> <span class="menu-arrow"></span></a>
         <ul class="list-unstyled">
           <li><a href="{{url('purchase-sale-stock-list-daily')}}">Daily  Reports</a></li>
           <li><a href="{{url('purchase-sale-stock-list-monthly')}}">Monthly Reports</a></li>
         </ul>
       </li> 
-      <li class="has_sub">
+      <li class="has_sub hidden">
         <a href="javascript:void(0);" class="waves-effect"><i class="ti-calendar"></i> <span>SalePoint Product Stock List</span> <span class="menu-arrow"></span></a>
         <ul class="list-unstyled">
           <li><a href="{{url('product-stock-list-daily')}}">Daily  Reports</a></li>
@@ -318,28 +319,28 @@
         </ul>
       </li> 
     
-      <li class="has_sub">
+      <li class="has_sub hidden">
         <a href="{{url('salepoint-downline-member-purchase')}}" class="waves-effect"><i class="ti-shopping-cart"></i><span>SalePoint Downline Member Purchase</span> </a>
       </li> 
-      <li class="has_sub">
+      <li class="has_sub hidden">
         <a href="{{url('/downline-members-purchase')}}" class="waves-effect"><i class="ti-shopping-cart"></i><span>Downline Member Purchase</span> </a>
       </li> 
-      <li class="has_sub">
+      <li class="has_sub hidden">
         <a href="{{url('salepoint-payout')}}" class="waves-effect"><i class="ti-shopping-cart"></i><span>Salepoint Payout</span> </a>
       </li> 
-      <li class="has_sub">
+      <li class="has_sub hidden">
         <a href="{{url('/salepoint-payout-list')}}" class="waves-effect"><i class="ti-shopping-cart"></i><span>Salepoint Payout List</span> </a>
       </li> 
-      <li class="has_sub">
+      <li class="has_sub hidden">
         <a href="{{url('members-payout')}}" class="waves-effect"><i class="ti-shopping-cart"></i><span>Members Payout</span> </a>
       </li> 
-      <li class="has_sub">
+      <li class="has_sub hidden">
         <a href="{{url('members-payout-list ')}}" class="waves-effect"><i class="ti-shopping-cart"></i><span>Members Payout List</span> </a>
       </li> 
-    {{--    <li class="has_sub">
+    {{--    <li class="has_sub hidden">
         <a href="{{url('downline-members')}}" class="waves-effect"><i class=" ti-comments"></i><span>Messages</span> </a>
       </li> --}}
-      <li class="has_sub">
+      <li class="has_sub hidden">
         <a href="{{url('settings')}}" class="waves-effect"><i class="ti-unlock"></i><span>Password</span> </a>
       </li> 
     </ul>
