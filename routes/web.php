@@ -29,10 +29,12 @@ Route::get('/sale-point-master/delete/{id}', 'SalePointMasterController@destroy'
 
 
 
-
-Route::get('/sale-point-member/create', 'SalePointMemberController@add'); 
+Route::get('/sale-point-members', 'SalePointController@index');
+Route::get('/sale-point-address', 'SalePointController@address');
+Route::get('/view-member-info', 'SalePointController@viewMemberInfo');
+Route::get('/sale-point-member/create', 'SalePointController@add'); 
 Route::post('/sale-point-member/store-salepoint-member', 'SalePointMemberController@storeSalepointMember'); 
-Route::post('/sale-point-member-list', 'SalePointMemberController@list'); 
+Route::post('/sale-point-member-list', 'SalePointController@list'); 
 
 
 
@@ -40,9 +42,7 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/dashboard', 'DashboardController@index');
 Route::get('/generate-pin', 'PinController@index');
 Route::get('/application-form', 'ApplicationController@index');
-Route::get('/sale-point-members', 'SalePointController@index');
-Route::get('/sale-point-address', 'SalePointController@address');
-Route::get('/view-member-info', 'SalePointController@viewMemberInfo');
+
 Route::get('/members', 'MemberController@index');
 Route::get('/members/address', 'MemberController@address');
 Route::get('/salepoint-downline-members', 'SalePointDownlineController@index');

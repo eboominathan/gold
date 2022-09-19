@@ -50,6 +50,55 @@
           var baseUrl = "{{ url('/')}}";
         </script>
 
+        @if(Request::segment(1) == 'sale-point-address')
+        <script src="{{ asset('assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js')}}"></script>
+        <script type="text/javascript">
+              $(document).ready(function() {
+          
+
+                  var table =  $('#salepoint_member').DataTable({
+              processing: true,
+              serverSide: true,
+              ajax: {
+                url: '{{ url('sale-point-member-list') }}',
+                method:'post',
+                data: function (d) {
+                   d._token = "{{ csrf_token() }}",
+                   d.date_from = $('#date_from').val(), 
+                   d.month_from =  $('#month_from').val() 
+                }
+              },
+              columns: [
+                  { data: 'DT_RowIndex', name: 'id'},                 
+                  { data:'name',name:'name'},
+                  { data:'sale_point_id',name:'sale_point_id'},               
+                  { data:'address',name:'address'},
+                  { data:'mobile',name:'mobile'},
+                 
+                ]
+              });
+              
+                  $('.btnGetInfo').click(function(){
+                      table.draw();
+                  })
+              });     
+
+
+       
+         jQuery('.datepicker').datepicker({
+          format: 'dd-mm-yyyy',
+          todayHighlight:true,
+          autoclose :true,
+
+        }); 
+         jQuery('.monthpicker').datepicker({
+           format: "mm-yyyy",
+           viewMode: "months", 
+           minViewMode: "months",
+           todayHighlight:true
+         });  
+      </script>
+        @endif
         @if(Request::segment(1) == 'sale-point-members')
           <script type="text/javascript">
               $(document).ready(function() {
@@ -68,7 +117,7 @@
                 }
               },
               columns: [
-                  { data: 'id', name: 'id'},                  
+                  { data: 'DT_RowIndex', name: 'id'},                
                   { data:'name',name:'name'},
                   { data:'sale_point_id',name:'sale_point_id'},
                   { data:'hidden',name:'hidden'},
