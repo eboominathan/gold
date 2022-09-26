@@ -262,7 +262,8 @@
         </ul>
       </li> 
       @endif
-      <li class="has_sub hidden">
+      @if(Auth::user()->type == 'salepoint')
+      <li class="has_sub">
         <a href="javascript:void(0);" class="waves-effect"><i class="ti-user"></i> <span> Members </span> <span class="menu-arrow"></span></a>
         <ul class="list-unstyled">
           <li><a href="{{url('members')}}">Members</a></li>                                  
@@ -270,6 +271,7 @@
           <li><a href="{{url('members/address')}}">Address Details</a></li>
         </ul>
       </li> 
+      @endif
        <li class="has_sub hidden">
         <a href="{{url('salepoint-downline-members')}}" class="waves-effect"><i class="ti-user"></i><span> Salepoint Downline Member Details </span> </a>
       </li>

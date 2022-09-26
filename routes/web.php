@@ -33,8 +33,18 @@ Route::get('/sale-point-members', 'SalePointController@index');
 Route::get('/sale-point-address', 'SalePointController@address');
 Route::get('/view-member-info', 'SalePointController@viewMemberInfo');
 Route::get('/sale-point-member/create', 'SalePointController@add'); 
-Route::post('/sale-point-member/store-salepoint-member', 'SalePointMemberController@storeSalepointMember'); 
+Route::post('/sale-point-member/store-salepoint-member', 'SalePointController@storeSalepointMember'); 
 Route::post('/sale-point-member-list', 'SalePointController@list'); 
+
+
+
+Route::get('/members', 'MemberController@index');
+Route::get('/members/address', 'MemberController@address');
+Route::get('/member/create', 'MemberController@add'); 
+Route::post('/member/store-member', 'MemberController@storeMember'); 
+Route::post('/member-list', 'MemberController@list'); 
+
+
 
 
 
@@ -43,8 +53,11 @@ Route::get('/dashboard', 'DashboardController@index');
 Route::get('/generate-pin', 'PinController@index');
 Route::get('/application-form', 'ApplicationController@index');
 
-Route::get('/members', 'MemberController@index');
-Route::get('/members/address', 'MemberController@address');
+
+
+
+
+
 Route::get('/salepoint-downline-members', 'SalePointDownlineController@index');
 Route::get('/view-downline-members', 'SalePointDownlineController@viewDownlineMember');
 Route::get('/downline-members', 'MemberController@index');

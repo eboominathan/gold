@@ -139,6 +139,61 @@
 
           </script>
         @endif
+        @if(Request::segment(1) == 'members')
+          <script type="text/javascript">
+              $(document).ready(function() {         
+
+                  var table =  $('#member').DataTable({
+              processing: true,
+              serverSide: true,
+              ajax: {
+                url: '{{ url('member-list') }}',
+                method:'post',
+                data: function (d) {
+                   d._token = "{{ csrf_token() }}";
+                   d.date_from = $('#date_from').val(); 
+                   d.month_from =  $('#month_from').val(); 
+                }
+              },
+              columns: [
+                  { data: 'DT_RowIndex', name: 'id'}, 
+                    { data:'name',name:'name'},
+                    { data:'member_id',name:'member_id'},
+                    { data:'hidden',name:'hidden'},
+                    { data:'date',name:'date'},
+                    { data:'sponsor_id',name:'sponsor_id'},
+                    { data:'stock_point_id',name:'stock_point_id'},
+                    { data:'address',name:'address'},
+                    { data:'mobile',name:'mobile'},
+                    { data:'email',name:'email'},
+
+                ]
+              });
+              
+                  $('.btnGetInfo').click(function(){
+                      table.draw();
+                  })
+              });     
+
+
+
+
+          </script>
+        @endif
+
+
+         @if(Request::segment(1) == 'member')
+           <script src="{{ asset('assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js')}}"></script>
+          <script type="text/javascript">
+              jQuery('.datepicker').datepicker({
+                format: 'dd-mm-yyyy',
+                todayHighlight:true,
+                autoclose :true,
+
+              }); 
+          </script>
+        @endif
+
 
         @if(Request::segment(1) == 'sale-point-member')
           <script src="{{ asset('assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js')}}"></script>

@@ -23,6 +23,14 @@
 			</div><!-- row -->
 			<div class="row">
 				<div class="col-sm-12">
+			<a href="{{url('/')}}/member/create"
+				class="btn btn-success"
+			 ><i class="fa fa-plus"> </i> Add  Member </a>
+			</div>
+			</div>
+			<br><br>
+			<div class="row">
+				<div class="col-sm-12">
 					<div class="portlet">
 						<div class="portlet-heading bg-success">
 							<h3 class="portlet-title 	">
@@ -44,35 +52,42 @@
 										<div class="card-box table-responsive">
 											<table cellpadding="10" class="table">
 												<tr>
+														<form>
 													<td>
 														<label class="control-label">Select Date  </label>
 													</td>
 													<td>
-														<input type="text" class="form-control datepicker" readonly="">
+														<input type="text" class="form-control datepicker" readonly="" id="date_from">
 														<span class="help-block">
 														</td>
 														<td>
-															<button class="btn btn-primary">Get Info</button>
+															<button  type="button" class="btn btn-primary btnGetInfo">Get Info</button>
+															<button type="reset" class="btn btn-danger">Clear</button>
 														</td>
+														</form>
 													</tr>
 													<tr>
+														<form>
+
 													<td>
 														<label class="control-label">Select Month  </label>
 													</td>
 													<td>
-														<input type="text" class="form-control monthpicker" readonly="">
+														<input type="text" class="form-control monthpicker" readonly="" id="month_from">
 														<span class="help-block">
 														</td>
 														<td>
-															<button class="btn btn-primary">Get Info</button>
+															<button type="button" class="btn btn-primary btnGetInfo">Get Info</button>
+														<button type="reset" class="btn btn-danger">Clear</button>
 														</td>
+														</form>
 													</tr>
 												</table>
 
 
 												<div class="clearfix"></div>
 
-												<table id="datatable-responsive"
+												<table id="member"
 												class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0"
 												width="100%">
 												<thead>
@@ -90,28 +105,8 @@
 													</tr>
 												</thead>
 												<tbody>
-													<tr>
-														<td>1</td>
-															<td><a href="{{url('/view-member-info')}}">Nixon</a></td>
-														<td><a href="{{url('/view-member-info')}}">123465</a></td>
-														<td>Password</td>
-														<td>2011/04/25</td>
-														<td>61</td>
-														<td>CHENNAI</td>
-														<td>5421</td>
-														<td>t.nixon@datatables.net</td>
-													</tr>
-													<tr>
-														<td>2</td>
-															<td><a href="{{url('/view-member-info')}}">Garrett</a></td>
-															<td><a href="{{url('/view-member-info')}}">546532</a></td>
-														<td>Password</td>
-														<td>2011/04/25</td>
-														<td>61</td>
-														<td>CHENNAI</td>
-														<td>5421</td>
-														<td>t.nixon@datatables.net</td>
-													</tr>
+													
+													
 
 												</tbody>
 											</table>

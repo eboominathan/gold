@@ -2,12 +2,12 @@
 
 namespace App\Services; 
 use Illuminate\Support\Facades\Hash;
-use App\SalepointMember; 
+use App\Member; 
 use App\User; 
 use Log; 
 use Carbon\Carbon;
 
-class SalepointMemberService {
+class MemberService {
 
 	public function store($params){
 
@@ -15,7 +15,7 @@ class SalepointMemberService {
 			"email" =>$params['email'],
 			"password" => Hash::make($params['password']),
 			"hidden" =>$params['password'],
-			"type" => 'salepoint',				 
+			"type" => 'member',				 
 			"created_by" => auth()->user()->id,
 			"updted_by" => auth()->user()->id
 		];
@@ -30,7 +30,9 @@ class SalepointMemberService {
 			$dob = Carbon::createFromFormat('d-m-Y', $params['dob'])->format('Y-m-d');
 			}
 
-		$data = [ 		
+		$data = [ 	
+			"member_id" =>1,
+			"stock_point_id" =>1,	
 			"name" =>$params['name'],
 			"date" =>$date,
 			"dob" => $dob,
@@ -56,16 +58,11 @@ class SalepointMemberService {
 			'created_by' =>  auth()->user()->id,
 			'updated_by' =>  auth()->user()->id
 		];
-		return SalepointMember::create($data);
+		return Member::create($data);
 		 
 	}
 
 
-	public function getSalepointMasterById($id){
-		return SalepointMaster::find($id);
-	}
-	public function deleteSalepointMasterById($id){
-		return SalepointMaster::find($id)->delete();
-	}
+	
 
 }  
