@@ -236,13 +236,13 @@
        <li class="has_sub">
         <a href="{{url('dashboard')}}" class="waves-effect"><i class="ti-home"></i><span> Dashboard </span> </a>
       </li> 
-        <li class="has_sub hidden">
+        <li class="has_sub">
         <a href="javascript:void(0);" class="waves-effect"><i class="ti-pin-alt"></i> <span> Pin Bank </span> <span class="menu-arrow"></span></a>
         <ul class="list-unstyled">
           <li><a href="{{url('generate-pin')}}">Generate Pin</a></li>                                  
         </ul>
       </li> 
-       <li class="has_sub hidden">
+       <li class="has_sub">
         <a href="{{url('application-form')}}" class="waves-effect"><i class="ti-user"></i><span> Application Form </span> </a>
       </li>
         <li class="has_sub hidden">

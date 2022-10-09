@@ -60,7 +60,7 @@ public function storeSalepointMember(Request $request)
     ]);
 
     if ($validator->fails()) {
-        return redirect('/sale-point-member/create')
+        return redirect('/application-form')
         ->withErrors($validator)
         ->withInput();
     }
@@ -68,7 +68,7 @@ public function storeSalepointMember(Request $request)
 
     $result = $this->salepointMemberService->store($request);
     if(!empty($result)){
-        return redirect('/sale-point-member/create')->with('message','SalePoint Member created successfully');
+        return redirect('/application-form')->with('message','Member created successfully');
     }else{
         return redirect()->back()->with('error','Please try again');
     }   

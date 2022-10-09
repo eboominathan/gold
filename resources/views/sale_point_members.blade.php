@@ -21,12 +21,12 @@
 					</ol>
 				</div>
 			</div><!-- row -->
-			<div class="row">
+			{{-- <div class="row">
 				<div class="col-sm-12">
 			<a href="{{url('/')}}/sale-point-member/create"
 				class="btn btn-success"
 			 ><i class="fa fa-plus"> </i> Add Salepoint Member </a>
-			</div>
+			</div> --}}
 			</div>
 			<br><br>
 			<div class="row">

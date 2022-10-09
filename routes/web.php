@@ -50,8 +50,13 @@ Route::post('/member-list', 'MemberController@list');
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/dashboard', 'DashboardController@index');
-Route::get('/generate-pin', 'PinController@index');
+Route::get('/get-all-users', 'PinController@getAllUsers');
 Route::get('/application-form', 'ApplicationController@index');
+
+
+Route::get('/generate-pin', 'PinController@index');
+Route::post('/create-pin', 'PinController@storePin');
+Route::post('/pin-number-list', 'PinController@list');
 
 
 

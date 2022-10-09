@@ -26,25 +26,74 @@
 
 
 
-{{-- @if(Request::segment(2) == 'generate-pin') --}}
- {{--    <script src="{{ asset('assets/plugins/bootstrap-tagsinput/js/bootstrap-tagsinput.min.js')}}"></script>
+@if(Request::segment(1) == 'generate-pin')
+    {{-- <script src="{{ asset('assets/plugins/bootstrap-tagsinput/js/bootstrap-tagsinput.min.js')}}"></script>
     <script src="{{ asset('assets/plugins/switchery/js/switchery.min.js')}}"></script>
-    <script type="text/javascript" src="{{ asset('assets/plugins/multiselect/js/jquery.multi-select.js')}}"></script>
-        <script type="text/javascript" src="{{ asset('assets/plugins/jquery-quicksearch/jquery.quicksearch.js')}}"></script>
+    {{-- <script type="text/javascript" src="{{ asset('assets/plugins/multiselect/js/jquery.multi-select.js')}}"></script> --}}
+        <script type="text/javascript" src="{{ asset('assets/plugins/jquery-quicksearch/jquery.quicksearch.js')}}"></script> --}}
         <script src="{{ asset('assets/plugins/select2/js/select2.min.js')}}" type="text/javascript"></script>
         <script src="{{ asset('assets/plugins/bootstrap-select/js/bootstrap-select.min.js')}}" type="text/javascript"></script>
-<script src="{{ asset('assets/plugins/bootstrap-filestyle/js/bootstrap-filestyle.min.js')}}" type="text/javascript"></script>
-        <script src="{{ asset('assets/plugins/bootstrap-touchspin/js/jquery.bootstrap-touchspin.min.js')}}" type="text/javascript"></script>
-        <script src="{{ asset('assets/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js')}}" type="text/javascript"></script>
+ 
+  <script>
+ function getUsers(){
+    $.ajax({
+        type: "GET",
+        url: '{{ url('get-all-users') }}',        
+        beforeSend :function(){
+      $('#user_id').find("option:eq(0)").html("Please wait..");
+        },      
+        datatype:'JSON',                   
+        success: function (data) {
+          /*get response as json */
+           $('#user_id').find("option:eq(0)").html("Select");
+        
+          $(data).each(function()
+          {
+           var option = $('<option />');
+           option.attr('value', this.value).text(this.label);           
+           $('#user_id').append(option);
+         });  
+         
+         $('.select2').select2();
+          /*ends */
+          
+        }
+      });
+ }
+ getUsers();
 
-        <script type="text/javascript" src="{{ asset('assets/plugins/autocomplete/jquery.mockjax.js')}}"></script>
-        <script type="text/javascript" src="{{ asset('assets/plugins/autocomplete/jquery.autocomplete.min.js')}}"></script>
-        <script type="text/javascript" src="{{ asset('assets/plugins/autocomplete/countries.js')}}"></script>
-        <script type="text/javascript" src="{{ asset('assets/pages/autocomplete.js')}}"></script>
+ $(document).ready(function(){
+  
+                  var table =  $('#datatable').DataTable({
+              processing: true,
+              serverSide: true,
+              ajax: {
+                url: '{{ url('pin-number-list') }}',
+                method:'post',
+                data: function (d) {
+                   d._token = "{{ csrf_token() }}"                  
+                }
+              },
+              columns: [
+                  { data: 'DT_RowIndex', name: 'id'},                 
+                  { data:'pin_no',name:'pin_no'},
+                  { data: 'serial_no',name:'serial_no'},
+                  { data: 'status',name:'status'},
+                  { data: 'generated_no',name:'generated_no'},              
+                  { data: 'user_id',name:'user_id'},                 
+                  { data: 'pin_used_date',name:'pin_used_date'},
+                  {data: 'action', name: 'action', orderable: false, searchable: false},               
+                 
+                ]
+              });
+              
+                 
+             
+ });
+  </script>
+        
 
-        <script type="text/javascript" src="{{ asset('assets/pages/jquery.form-advanced.init.js')}}"></script> --}}
-
-        {{-- @endif --}}
+        @endif
 
         <script type="text/javascript">
           var baseUrl = "{{ url('/')}}";

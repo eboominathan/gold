@@ -2,12 +2,12 @@
 
 namespace App\Services; 
 use Illuminate\Support\Facades\Hash;
-use App\SalePointMember; 
+use App\SalepointMember; 
 use App\User; 
 use Log; 
 use Carbon\Carbon;
 
-class SalepointMemberService {
+class ApplicationService {
 
 	public function store($params){
 
@@ -57,13 +57,20 @@ class SalepointMemberService {
 			'created_by' =>  auth()->user()->id,
 			'updated_by' =>  auth()->user()->id
 		];
-		return SalePointMember::create($data);
+		return SalepointMember::create($data);
 		 
 	}
 
 
-	public function getSalepointMasterById($id){
-		return SalepointMaster::find($id);
+	public function getUserId(){
+		$user =  User::where('type','!=','superadmin')->orderBy('id','desc')->first();
+		if(empty($user)){
+			$userId = config('constants.DEFAULT_USER_ID');
+		}else{
+			$userId = $user->user_id;
+			$userId++; 
+		}
+		return	$userId;
 	}
 	public function deleteSalepointMasterById($id){
 		return SalepointMaster::find($id)->delete();

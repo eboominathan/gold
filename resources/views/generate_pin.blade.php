@@ -44,19 +44,41 @@
 						<div id="bg-success" class="panel-collapse collapse in">
 							<div class="portlet-body">
 								<div class="card-box table-responsive">
-									<form class="form-horizontal" role="form" id="pin_generate_form">
+								@if (\Session::has('message'))
+									<div class="alert alert-success">
+										{!! \Session::get('message') !!} 
 
+									</div>
+									@endif
+									@if (\Session::has('error'))
+									<div class="alert alert-danger">         
+										{!! \Session::get('error') !!}             
+									</div>
+									@endif
+
+
+								@if($errors->count())
+								@foreach ($errors->all() as $error)
+								<div class="alert alert-danger">{{ $error }}</div>
+								@endforeach
+								@endif
+
+
+									<form class="form-horizontal" role="form" id="pin_generate_form" method="post" action="{{url('/').'/create-pin'}}">
+										@csrf()
 										<div class="form-group">
 											<label class="control-label col-md-3">Total No of Pin <span class="red">*</span></label>
 											<div class="col-md-7">
-												<input type="text" class="form-control" value="" name="total_pin" id="total_pin" placeholder="Enter Total Number of Pin">
+												<input type="number" class="form-control" value="" name="total_pin" id="total_pin" placeholder="Enter Total Number of Pin" maxlength="3" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
 												<span class="help-block"></span>
 											</div>
 										</div>
 										<div class="form-group">
 											<label class="control-label col-md-3">ID No <span class="red">*</span></label>
 											<div class="col-md-7">
-												<input type="text" class="form-control" value="" name="id_no" id="id_no" placeholder="Enter ID No">
+												<select class="form-control select2" id="user_id" name="user_id">
+														<option  value="">Select</option>	
+													</select>
 												<span class="help-block"></span>
 											</div>
 										</div>
@@ -133,27 +155,7 @@
 											</tr>
 										</thead>
 										<tbody>
-											<tr>
-												<td>1</td>
-												<td>PN12345678</td>
-												<td>SN12345678</td>
-												<td>
-													<div class="">
-														<input type="checkbox" checked="" data-plugin="switchery" data-color="#f05050" data-size="small" data-switchery="true" style="display: none;"><span class="switchery switchery-small" style="background-color: rgb(129, 200, 104); border-color: rgb(129, 200, 104); box-shadow: rgb(129, 200, 104) 0px 0px 0px 16px inset; transition: border 0.4s ease 0s, box-shadow 0.4s ease 0s, background-color 1.2s ease 0s;"><small style="left: 20px; background-color: rgb(255, 255, 255); transition: background-color 0.4s ease 0s, left 0.2s ease 0s;"></small></span>
-
-
-													</div>
-												</td>
-												<td>#123456</td>
-												<td>#123456</td>
-												<td>{{ \Carbon\Carbon::now()->format('d-m-Y') }}</td>
-												<td>
-													
-													<button class="btn-sm btn-primary">Edit</button>
-													<button class="btn-sm btn-danger">Delete</button>
-												</td>
-											</tr>
-										</tbody>
+											 
 									</table>
 								</div>
 							</div>
@@ -179,3 +181,5 @@
 
 
 @endsection
+
+ 
