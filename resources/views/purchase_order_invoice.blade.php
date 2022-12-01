@@ -1,7 +1,9 @@
-<table  	>
+  {{-- <link href="{{ asset('assets/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" /> --}}
+ 
+<table>
 	<tr>
 		<th><img src="{{asset('assets/images/header-logo.png')}}" style="width: 325px;"></th>
-		<th><h2>Gold Herbal Care </h2></th>
+		<th><h2>GOLD  HERBAL CARE </h2></th>
 		<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
 	</tr>
 	<tr>
@@ -16,16 +18,21 @@
  	
  	<hr>
  	<div align="center">
- 	From 01-05-2022 12:00:00 AM to 31-05-2022 12:00:00 AM 
+ 	From <input type="text" class="form-control datepicker" readonly=""> To <input type="text" class="form-control datepicker" readonly="">
+ 	<input type="submit" name="" value="Submit">
  	</div>
  	<hr>
 
  @endif 
 <table  width="100%"  cellpadding="10">
-
-	<tr>
-		<th align="left">Order Date :  {{\Carbon\Carbon::now()->format('d-m-Y') }} </th>
+		<tr>
+			@if(!Request::get('monthly'))
+		<th align="left">Invoice Date :  {{\Carbon\Carbon::now()->format('d-m-Y') }} </th>
 		<th align="left"></th>
+		@else
+		<th align="left">Order Month : {{\Carbon\Carbon::now()->format('M') }}</th>
+		<th align="left"></th>
+		@endif
 		<th><h2>ORDER INVOICE  @if(Request::get('monthly')) MONTHLY @endif</h2></th>
 		<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
 		@if(Request::get('monthly'))
@@ -36,18 +43,62 @@
 		<th align="left"></th>
 		@endif
 	</tr>
+
+
+	<tr>@if(!Request::get('monthly'))
+		<th align="left">Invoice No  :#65465 </th>
+		<th align="left"></th>
+		@else
+		<th align="left">Purchased By : Sanjay </th>
+		<th align="left"></th>
+		@endif
+		<th> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+		<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+		@if(Request::get('monthly'))
+			<th align="right">Salepoint ID No: #123465</th>
+		<th align="left"></th>
+		@else
+			<th align="right">Order No: #123465</th>
+		<th align="left"></th>
+		@endif
+	</tr>
 	<tr>
+		@if(!Request::get('monthly'))
+		<th align="left">Order Date :  {{\Carbon\Carbon::now()->format('d-m-Y') }} </th>
+		<th align="left"></th>
+		@else
+		<th align="left">Salepoint Id No</th>
+		<th align="left"></th>
+		@endif
+		<th> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+		<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+		@if(Request::get('monthly'))
+			<th align="right">Order No: #123465</th>
+		<th align="left"></th>
+		@else
+			<th align="right">Order Channel: #123465</th>
+		<th align="left"></th>
+		@endif
+	</tr>
+	<tr>
+		@if(!Request::get('monthly'))
 		<th align="left">Order Month : {{\Carbon\Carbon::now()->format('M') }}</th>
 		<th align="left"></th>
+		@else
+		<th align="left">Sale Point Name & Address: Sanjay , Madurai</th>
+		<th align="left"></th>
+		@endif
 		<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
 		<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
 		@if(Request::get('monthly'))
 		
 		@else
-			<th align="right">Order No :  #123465</th>
+			<th align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
 			<th align="left"></th>
 		@endif
-	</tr><tr>
+	</tr>
+	@if(!Request::get('monthly'))
+	<tr>
 		<th align="left">Purchased By : Sanjay</th>
 		<th align="left"></th>
 		<th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
@@ -55,10 +106,11 @@
 		@if(Request::get('monthly'))
 		
 		@else
-			<th align="right">Order Channel : C43534</th>
+			<th align="right">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
 			<th align="left"></th>
 		@endif
 	</tr>
+
 	<tr>
 		<th align="left">Sale Point ID No : SP0001</th>
 		<th align="left"></th>
@@ -75,6 +127,7 @@
 		<th align="right"></th>
 		<th align="left"></th>
 	</tr>
+	@endif
 	<tr>
 		<th align="left">Phone No : 9876541230</th>
 		<th align="left"></th>
@@ -83,10 +136,12 @@
 		<th align="right"></th>
 		<th align="left"></th>
 	</tr>
+
 </table>
 <table  cellspacing="0" width="100%" border="1" style="border-collapse: collapse;" cellpadding="10">
 <tr>
 	<th>SNO</th>
+ 
 	<th>Description</th>
 	<th>Quantity</th>
 	<th>Rate</th>
@@ -104,6 +159,7 @@
 <tbody id="purchase">
 	<tr>
 		<td>1</td>
+ 
 		<td>Description</td>
 		<td>123</td>
 		<td>123</td>
@@ -120,6 +176,7 @@
 	</tr>
 	<tr>
 		<td>2</td>
+	 
 		<td>Description</td>
 		<td>123</td>
 		<td>123</td>
@@ -136,6 +193,7 @@
 	</tr>
 	<tr>
 		<td>3</td>
+	 
 		<td>Description</td>
 		<td>123</td>
 		<td>123</td>
@@ -152,6 +210,7 @@
 	</tr>
 	<tr>
 		<td>4</td>
+	 
 		<td>Description</td>
 		<td>123</td>
 		<td>123</td>
@@ -168,6 +227,7 @@
 	</tr>
 	<tr>
 		<td>5</td>
+ 
 		<td>Description</td>
 		<td>123</td>
 		<td>123</td>
@@ -186,6 +246,7 @@
  
 	<tr>
 		<td>-</td>
+	 
 		<td>-</td>
 		<td>123</td>
 		<td>123</td>
@@ -204,6 +265,7 @@
  
  
 	<tr style="border-top: none;">
+	 
 		<td style="border:none"></td>
 		<td style="border:none"></td>
 		<td style="border:none">&nbsp;&nbsp;</td>
@@ -221,6 +283,7 @@
 	</tr>
 	<tr>
 		<td style="border:none"></td>
+	 
 		<td style="border:none"></td>
 		<td style="border:none">&nbsp;&nbsp;</td>
 		<td style="border:none">&nbsp;&nbsp;</td>
@@ -241,3 +304,4 @@
 	<div align="center" onclick="window.print()">
 <button class="btn btn-primary" align="center">Print</button>
 </div>
+@include('layouts.footer')

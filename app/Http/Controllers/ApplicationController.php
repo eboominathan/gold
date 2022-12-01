@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Services\ApplicationService;
 
 class ApplicationController extends Controller
 {
@@ -11,10 +12,10 @@ class ApplicationController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        
-    }
+     public  function __construct(ApplicationService $applicationService)
+  {
+     $this->applicationService = $applicationService;
+ }
 
     /**
      * Show the application dashboard.
@@ -24,6 +25,7 @@ class ApplicationController extends Controller
     public function index()
     {
     	$title = 'Application Form';
-        return view('application_form',compact('title'));
+        $userId = $this->applicationService->getUserId();
+        return view('application_form',compact('title','userId'));
     }
 }

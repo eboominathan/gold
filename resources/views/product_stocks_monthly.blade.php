@@ -67,24 +67,24 @@
 												<thead>
 													<tr>
 														<th>SNO</th>					 
-														<th>DATE</th>		
+													{{-- 	<th>DATE</th>	 --}}	
 														<th>PRODUCT NAME & GRAM</th>
-														<th>STOCK PRODUCT</th>	 
+													{{-- 	<th>STOCK PRODUCT</th>	 --}} 
 													</tr>
 												</thead>
 												<tbody>
 													<tr>
 														<td>1</td>
-														<td>{{\Carbon\Carbon::now()->format('d-m-Y')}}</td>
+													{{-- 	<td>{{\Carbon\Carbon::now()->format('d-m-Y')}}</td> --}}
 														<td><a href="javascript:void(0)" onclick="showTable()">TURMERIC POWDER -100g</a></td>
-															<td>100</td>
+														{{-- 	<td>100</td> --}}
 
 														</tr>
 														<tr>
-															<td>2</td>
-															<td>{{\Carbon\Carbon::now()->format('d-m-Y')}}</td>
+															 <td>2</td>
+															{{--<td>{{\Carbon\Carbon::now()->format('d-m-Y')}}</td> --}}
 															<td><a href="javascript:void(0)" onclick="showTable()">TURMERIC POWDER -150g</a></td>
-															<td>100</td>
+															{{-- <td>100</td> --}}
 
 														</tr>
 
@@ -108,8 +108,8 @@
 										<th>PURCHASE PRODUCT</th>	 
 										<th>OLD STOCK</th>	 
 										<th>TOTAL PRODUCT</th>	 
-										<th>STOCK PRODUCT</th>	
 										<th>SOLD PRODUCT</th>	 
+										<th>STOCK PRODUCT</th>	
 									</tr>
 								</thead>
 								<tbody>

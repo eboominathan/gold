@@ -16,7 +16,7 @@
 							<a href="javascript:void(0);">SalePoint Members</a>
 						</li>
 						<li class="active">
-							Order Invoice Monthly
+							Tax Invoice Monthly
 						</li>
 					</ol>
 				</div>
@@ -26,7 +26,7 @@
 					<div class="portlet">
 						<div class="portlet-heading bg-success">
 							<h3 class="portlet-title 	">
-								Order Invoice Monthly
+								Tax Invoice Monthly
 							</h3>
 							<div class="portlet-widgets">
 								<a href="javascript:;" data-toggle="reload"><i class="ion-refresh"></i></a>
@@ -76,8 +76,8 @@
 												<thead>
 													<tr>
 														<th>SNO</th>
-														<th>SPONSOR ID NO</th>
 														<th>SALEPOINT ID No</th>
+														<th>SPONSOR ID NO</th>
 														<th>MEMBER ID No</th>
 														<th>PRODUCT QUANTITY</th>
 														<th>PRODUCT VALUE</th>
@@ -88,8 +88,8 @@
 												<tbody>
 													<tr>
 														<td>1</td>
-														<td>13132</td>
 														<td><a href="{{url('/purchse-tax-invoice?monthly=true')}}">1235</a></td>
+														<td>13132</td>
 														<td>#6546</td>
 														<td>5</td>
 														<td>1200</td>
@@ -98,8 +98,8 @@
 													</tr>
 													<tr>
 														<td>2</td>
-														<td>13133</td>
 														<td><a href="{{url('/purchse-tax-invoice?monthly=true')}}">1231</a></td>
+														<td>13133</td>
 														<td>#636</td>
 														<td>5</td>
 														<td>1200</td>

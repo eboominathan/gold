@@ -67,11 +67,12 @@
 												<thead>
 													<tr>
 														<th>SNO</th>					 
+														<th>DATE</th>					 
 														<th>SALEPOINT ID NO</th>
-														@if(!Request::get('monthly'))	
+												{{-- 		@if(!Request::get('monthly'))	 --}}
 														<th>SPONSOR ID NO</th>		
 														<th>MEMBER ID NO</th>	
-														@endif	
+														{{-- @endif	 --}}
 														<th>PRODUCT VALUE</th>
 														<th>TAXABLE AMOUNT</th>
 														<th>NET PAY AMOUNT </th>
@@ -80,17 +81,19 @@
 												<tbody>
 													<tr>
 														<td>1</td>
+														<td> 29-05-2022</td>
 														<td> 13132</td>
-													 	@if(!Request::get('monthly'))	
+													 {{-- 	@if(!Request::get('monthly'))	 --}}
 														<td>1200</td>
 														<td>123</td>
-														@endif
+														{{-- @endif --}}
 														<td>123</td>
 														<td>123</td>
 														<td>10000</td>
 													</tr>
 													<tr>
 														<td>2</td>
+														<td> 29-05-2022</td>
 														<td> 13135 </td>
 													 
 													@if(!Request::get('monthly'))	
@@ -100,11 +103,16 @@
 														<td>123</td>
 														<td>123</td>
 														<td>10000</td>
+														@if(Request::get('monthly'))	
+														<td></td>
+														<td></td>
+														@endif
 													</tr>
 													
 												</tbody>
 												<tfoot>
 													<tr>
+														<td>&nbsp;</td>
 														<td>&nbsp;</td>
 														<td>&nbsp;</td>
 														<td>&nbsp;</td>

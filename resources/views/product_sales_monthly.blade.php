@@ -16,7 +16,7 @@
 							<a href="javascript:void(0);">SalePoint Members</a>
 						</li>
 						<li class="active">
-							Product Sales Details Monthly
+						SalePoint Product Sales Details Monthly
 						</li>
 					</ol>
 				</div>
@@ -26,7 +26,7 @@
 					<div class="portlet">
 						<div class="portlet-heading bg-success">
 							<h3 class="portlet-title 	">
-								Product Sales Details Monthly
+								SalePoint Product Sales Details Monthly
 							</h3>
 							<div class="portlet-widgets">
 								<a href="javascript:;" data-toggle="reload"><i class="ion-refresh"></i></a>

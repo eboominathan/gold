@@ -92,7 +92,7 @@
 														<td>1</td>
 														<td>18-05-2022</td>			 
 														<td><a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="{{url('/view-downline-members-purchase')}}" data-original-title="Total Downline Members : 10">SAL15486</a></td>
-														<td>123</td>
+														<td><a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="{{url('/view-downline-members-purchase')}}" data-original-title="Total Downline Members : 10">123</a></td>
 														<td>GH001010</td>
 														<td></td>
 														<td></td>
@@ -101,7 +101,7 @@
 														<td>2</td>
 														<td>18-05-2022</td>			 
 														<td><a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="{{url('/view-downline-members-purchase')}}" data-original-title="Total Downline Members : 10">SAL15487</a></td>
-														<td>123</td>
+														<td><a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="{{url('/view-downline-members-purchase')}}" data-original-title="Total Downline Members : 10">123</a></td>
 														<td>GH001005</td>
 														<td></td>
 														<td></td>

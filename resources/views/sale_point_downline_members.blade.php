@@ -62,8 +62,8 @@
 														<tr>
 															<td>1</td>
 															<td>1/05/2022</td>
-															<td><a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="{{url('/view-downline-members')}}" data-original-title="Total Downline Members : 10">SPON15486</a></td>
-															<td>15486</td>
+															<td>SPON15486</td>
+															<td><a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="{{url('/view-downline-members')}}" data-original-title="Total Downline Members : 10">15486</a></td>
 															<td><a href="{{url('/view-member-info')}}">Nixon CHENNAI</a></td>
 															<td>CHENNAI</td>
 															<td>1235489</td>
@@ -71,8 +71,8 @@
 														<tr>
 															<td>2</td>
 															<td>1/05/2022</td>
-															<td><a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="javascript:void(0)" data-original-title="Total Downline Members : 8">SPON15487</a></td>
-															<td>15486</td>
+															<td> SPON15487</td>
+															<td><a title="" data-placement="top" data-toggle="tooltip" class="tooltips" href="{{url('/view-downline-members')}}" data-original-title="Total Downline Members : 10">15486</a></td>
 															<td><a href="{{url('/view-member-info')}}">Garett CHENNAI</a></td>
 															<td>CHENNAI</td>
 															<td>1235489</td>

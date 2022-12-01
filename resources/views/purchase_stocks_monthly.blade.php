@@ -67,8 +67,7 @@
 												<thead>
 													<tr>
 														<th>SNO</th>					 
-														<th>SALEPOINT ID No</th>		
-												 	
+														<th>SALEPOINT ID No</th>
 														<th>PRODUCT PURCHASE QUANTITY</th>
 														<th>OLD STOCK</th>
 														<th>TOTAL PRODUCTS</th>
@@ -85,7 +84,7 @@
 												<tbody>
 													<tr>
 														<td>1</td>
-														<td><a href="{{url('/purchase-sale-stock-list-daily-view')}}">13132</a></td>
+														<td><a href="{{url('/purchase-sale-stock-list-monthly-view')}}">13132</a></td>
 													 
 													 
 														<td>200</td>
@@ -101,7 +100,7 @@
 													</tr>
 													<tr>
 														<td>2</td>
-														<td><a href="{{url('/purchase-sale-stock-list-daily-view')}}">13132</a></td>
+														<td><a href="{{url('/purchase-sale-stock-list-monthly-view')}}">13132</a></td>
 												 
 														<td>200</td>
 														<td>-</td>

@@ -57,6 +57,7 @@
 														<th>PRODUCT DESCRIPTION</th>
 														<th>PRODUCT PURCHASE QUANTITY</th>
 														<th>PRODUCT RATE</th>
+														<th>PRODUCT VALUE</th>
 														<th>DISCOUNT (%)</th>
 														<th>DISCOUNT (AMOUNT)</th>
 														<th>TAXABLE</th>
@@ -78,6 +79,7 @@
 													<tr>
 														<td>1</td>
 														<td>DESC</td>					 
+														<td>2</td>
 														<td>2</td>
 														<td>200</td>
 														<td>7650</td>

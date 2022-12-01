@@ -14,16 +14,41 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $fillable = [
-        'name', 'email', 'password',
+         protected $fillable = [
+        'user_id',
+        'first_name',
+        'last_name',      
+        'email', 
+        'password', 
+        'hidden', 
+        'type', 
+        'sale_point_id', 
+        'referal_id', 
+        'email_sent', 
+        'loggedin', 
+        'status', 
+        'created_by', 
+        'updated_by'
     ];
 
-    /**
-     * The attributes that should be hidden for arrays.
+   
+     /**
+     * The attributes that should be cast to native types.
      *
      * @var array
      */
-    protected $hidden = [
-        'password', 'remember_token',
+    protected $casts = [
+        'created_at' => 'datetime:d-M-Y',
+        'updated_at' => 'datetime:d-M-Y'
     ];
+     /**
+     * The attributes dates that should be added.
+     *
+     * @var array
+     */
+    protected $dates = [
+        'deleted_at'
+    ];
+
+
 }

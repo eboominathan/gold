@@ -20,26 +20,266 @@
 
 
 
-{{-- @if(Request::segment(2) == 'generate-pin') --}}
- {{--    <script src="{{ asset('assets/plugins/bootstrap-tagsinput/js/bootstrap-tagsinput.min.js')}}"></script>
+<script src="{{ asset('assets/plugins/notifyjs/js/notify.js')}}"></script>
+ <script src="{{ asset('assets/plugins/notifications/notify-metro.js')}}"></script>
+ <script src="{{ asset('assets/plugins/bootstrap-sweetalert/sweet-alert.js')}}"></script>
+
+
+
+@if(Request::segment(1) == 'generate-pin')
+    {{-- <script src="{{ asset('assets/plugins/bootstrap-tagsinput/js/bootstrap-tagsinput.min.js')}}"></script>
     <script src="{{ asset('assets/plugins/switchery/js/switchery.min.js')}}"></script>
-    <script type="text/javascript" src="{{ asset('assets/plugins/multiselect/js/jquery.multi-select.js')}}"></script>
-        <script type="text/javascript" src="{{ asset('assets/plugins/jquery-quicksearch/jquery.quicksearch.js')}}"></script>
+    {{-- <script type="text/javascript" src="{{ asset('assets/plugins/multiselect/js/jquery.multi-select.js')}}"></script> --}}
+        <script type="text/javascript" src="{{ asset('assets/plugins/jquery-quicksearch/jquery.quicksearch.js')}}"></script> --}}
         <script src="{{ asset('assets/plugins/select2/js/select2.min.js')}}" type="text/javascript"></script>
         <script src="{{ asset('assets/plugins/bootstrap-select/js/bootstrap-select.min.js')}}" type="text/javascript"></script>
-<script src="{{ asset('assets/plugins/bootstrap-filestyle/js/bootstrap-filestyle.min.js')}}" type="text/javascript"></script>
-        <script src="{{ asset('assets/plugins/bootstrap-touchspin/js/jquery.bootstrap-touchspin.min.js')}}" type="text/javascript"></script>
-        <script src="{{ asset('assets/plugins/bootstrap-maxlength/bootstrap-maxlength.min.js')}}" type="text/javascript"></script>
+ 
+  <script>
+ function getUsers(){
+    $.ajax({
+        type: "GET",
+        url: '{{ url('get-all-users') }}',        
+        beforeSend :function(){
+      $('#user_id').find("option:eq(0)").html("Please wait..");
+        },      
+        datatype:'JSON',                   
+        success: function (data) {
+          /*get response as json */
+           $('#user_id').find("option:eq(0)").html("Select");
+        
+          $(data).each(function()
+          {
+           var option = $('<option />');
+           option.attr('value', this.value).text(this.label);           
+           $('#user_id').append(option);
+         });  
+         
+         $('.select2').select2();
+          /*ends */
+          
+        }
+      });
+ }
+ getUsers();
 
-        <script type="text/javascript" src="{{ asset('assets/plugins/autocomplete/jquery.mockjax.js')}}"></script>
-        <script type="text/javascript" src="{{ asset('assets/plugins/autocomplete/jquery.autocomplete.min.js')}}"></script>
-        <script type="text/javascript" src="{{ asset('assets/plugins/autocomplete/countries.js')}}"></script>
-        <script type="text/javascript" src="{{ asset('assets/pages/autocomplete.js')}}"></script>
+ $(document).ready(function(){
+  
+                  var table =  $('#datatable').DataTable({
+              processing: true,
+              serverSide: true,
+              ajax: {
+                url: '{{ url('pin-number-list') }}',
+                method:'post',
+                data: function (d) {
+                   d._token = "{{ csrf_token() }}"                  
+                }
+              },
+              columns: [
+                  { data: 'DT_RowIndex', name: 'id'},                 
+                  { data:'pin_no',name:'pin_no'},
+                  { data: 'serial_no',name:'serial_no'},
+                  { data: 'status',name:'status'},
+                  { data: 'generated_no',name:'generated_no'},              
+                  { data: 'user_id',name:'user_id'},                 
+                  { data: 'pin_used_date',name:'pin_used_date'},
+                  {data: 'action', name: 'action', orderable: false, searchable: false},               
+                 
+                ]
+              });
+              
+                 
+             
+ });
+  </script>
+        
 
-        <script type="text/javascript" src="{{ asset('assets/pages/jquery.form-advanced.init.js')}}"></script> --}}
+        @endif
 
-        {{-- @endif --}}
+        <script type="text/javascript">
+          var baseUrl = "{{ url('/')}}";
+        </script>
 
+        @if(Request::segment(1) == 'sale-point-address')
+        <script src="{{ asset('assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js')}}"></script>
+        <script type="text/javascript">
+              $(document).ready(function() {
+          
+
+                  var table =  $('#salepoint_member').DataTable({
+              processing: true,
+              serverSide: true,
+              ajax: {
+                url: '{{ url('sale-point-member-list') }}',
+                method:'post',
+                data: function (d) {
+                   d._token = "{{ csrf_token() }}",
+                   d.date_from = $('#date_from').val(), 
+                   d.month_from =  $('#month_from').val() 
+                }
+              },
+              columns: [
+                  { data: 'DT_RowIndex', name: 'id'},                 
+                  { data:'name',name:'name'},
+                  { data:'sale_point_id',name:'sale_point_id'},               
+                  { data:'address',name:'address'},
+                  { data:'mobile',name:'mobile'},
+                 
+                ]
+              });
+              
+                  $('.btnGetInfo').click(function(){
+                      table.draw();
+                  })
+              });     
+
+
+       
+         jQuery('.datepicker').datepicker({
+          format: 'dd-mm-yyyy',
+          todayHighlight:true,
+          autoclose :true,
+
+        }); 
+         jQuery('.monthpicker').datepicker({
+           format: "mm-yyyy",
+           viewMode: "months", 
+           minViewMode: "months",
+           todayHighlight:true
+         });  
+      </script>
+        @endif
+        @if(Request::segment(1) == 'sale-point-members')
+          <script type="text/javascript">
+              $(document).ready(function() {
+          
+
+                  var table =  $('#salepoint_member').DataTable({
+              processing: true,
+              serverSide: true,
+              ajax: {
+                url: '{{ url('sale-point-member-list') }}',
+                method:'post',
+                data: function (d) {
+                   d._token = "{{ csrf_token() }}";
+                   d.date_from = $('#date_from').val(); 
+                   d.month_from =  $('#month_from').val(); 
+                }
+              },
+              columns: [
+                  { data: 'DT_RowIndex', name: 'id'},                
+                  { data:'name',name:'name'},
+                  { data:'sale_point_id',name:'sale_point_id'},
+                  { data:'hidden',name:'hidden'},
+                  { data:'date',name:'date'},
+                  { data:'sponsor_id',name:'sponsor_id'},
+                  { data:'address',name:'address'},
+                  { data:'mobile',name:'mobile'},
+                  { data:'email',name:'email'}
+                ]
+              });
+              
+                  $('.btnGetInfo').click(function(){
+                      table.draw();
+                  })
+              });     
+
+
+
+
+          </script>
+        @endif
+        @if(Request::segment(1) == 'members')
+          <script type="text/javascript">
+              $(document).ready(function() {         
+
+                  var table =  $('#member').DataTable({
+              processing: true,
+              serverSide: true,
+              ajax: {
+                url: '{{ url('member-list') }}',
+                method:'post',
+                data: function (d) {
+                   d._token = "{{ csrf_token() }}";
+                   d.date_from = $('#date_from').val(); 
+                   d.month_from =  $('#month_from').val(); 
+                }
+              },
+              columns: [
+                  { data: 'DT_RowIndex', name: 'id'}, 
+                    { data:'name',name:'name'},
+                    { data:'member_id',name:'member_id'},
+                    { data:'hidden',name:'hidden'},
+                    { data:'date',name:'date'},
+                    { data:'sponsor_id',name:'sponsor_id'},
+                    { data:'stock_point_id',name:'stock_point_id'},
+                    { data:'address',name:'address'},
+                    { data:'mobile',name:'mobile'},
+                    { data:'email',name:'email'},
+
+                ]
+              });
+              
+                  $('.btnGetInfo').click(function(){
+                      table.draw();
+                  })
+              });     
+
+
+
+
+          </script>
+        @endif
+
+
+         @if(Request::segment(1) == 'member')
+           <script src="{{ asset('assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js')}}"></script>
+          <script type="text/javascript">
+              jQuery('.datepicker').datepicker({
+                format: 'dd-mm-yyyy',
+                todayHighlight:true,
+                autoclose :true,
+
+              }); 
+          </script>
+        @endif
+
+
+        @if(Request::segment(1) == 'sale-point-member')
+          <script src="{{ asset('assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js')}}"></script>
+        <script type="text/javascript">
+         jQuery('.datepicker').datepicker({
+          format: 'dd-mm-yyyy',
+          todayHighlight:true,
+          autoclose :true,
+
+        }); 
+      </script>
+        @endif
+        @if(Request::segment(1) == 'sale-point-master')
+        <script src="{{ asset('assets/datatables/js/jquery.dataTables.min.js')}}"></script>
+        <script src="{{ asset('assets/datatables/js/dataTables.bootstrap.js')}}"></script>
+             <script src="{{ asset('js/custom/salepoint_master.js')}}"></script>
+        @endif
+        @if(Request::segment(1) == 'purchase-order-invoice')
+           <script src="{{ asset('assets/plugins/moment/moment.js')}}"></script>
+        <script src="{{ asset('assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js')}}"></script>
+        <script type="text/javascript">
+         jQuery('.datepicker').datepicker({
+          format: 'dd-mm-yyyy',
+          todayHighlight:true,
+          autoclose :true,
+
+        }); 
+         jQuery('.monthpicker').datepicker({
+           format: "mm-yyyy",
+           viewMode: "months", 
+           minViewMode: "months",
+           todayHighlight:true
+         });  
+  </script>
+
+
+        @endif
         @if(Request::segment(1) == 'salepoint-payout' || Request::segment(1) == 'salepoint-payout-list' || Request::segment(1) == 'members-payout' || Request::segment(1) == 'members-payout-list' )
 
         <script src="{{ asset('assets/plugins/moment/moment.js')}}"></script>

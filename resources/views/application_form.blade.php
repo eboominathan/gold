@@ -13,10 +13,10 @@
 					<h4 class="page-title">{{$title}}</h4>
 					<ol class="breadcrumb">								
 						<li>
-							<a href="javascript:void(0);">Application</a>
+							<a href="{{url('/sale-point-members')}}">SalePoint Members</a>
 						</li>
 						<li class="active">
-							Application Form
+							Add  Member Information
 						</li>
 					</ol>
 				</div>
@@ -26,7 +26,7 @@
 					<div class="portlet">
 						<div class="portlet-heading bg-success">
 							<h3 class="portlet-title 	">
-								Application Form
+								Member Information
 							</h3>
 							<div class="portlet-widgets">
 								<a href="javascript:;" data-toggle="reload"><i class="ion-refresh"></i></a>
@@ -40,32 +40,61 @@
 						<div id="bg-success" class="panel-collapse collapse in">
 							<div class="portlet-body">
 								<div class="card-box table-responsive">
-									<form  role="form" id="application_form">
+									@if (\Session::has('message'))
+									<div class="alert alert-success">
+										{!! \Session::get('message') !!} 
+
+									</div>
+									@endif
+									@if (\Session::has('error'))
+									<div class="alert alert-danger">         
+										{!! \Session::get('error') !!}             
+									</div>
+									@endif
+
+
+								@if($errors->count())
+								@foreach ($errors->all() as $error)
+								<div class="alert alert-danger">{{ $error }}</div>
+								@endforeach
+								@endif
+
+
+
+									<form  role="form" id="application_form" method="post" action="{{url('/sale-point-member/store-salepoint-member')}}">
+										@csrf()
+										<div class="form-group">
+											<div class="col-md-6">
+												<label class="control-label">ID <span class="red">*</span></label>
+												<input type="text" class="form-control"   name="user_id" id="" readonly value="{{$userId}}">
+												<span class="help-block"></span>
+											</div>
+										</div>
+										<div class="clearfix"></div> 
 										<div class="form-group">
 											<div class="col-md-6">
 												<label class="control-label">Name <span class="red">*</span></label>
-												<input type="text" class="form-control" value="" name="name" id="name" placeholder="Enter Name">
+												<input type="text" class="form-control"   name="name" id="name" placeholder="Enter Name" >
 												<span class="help-block"></span>
 											</div>
 										</div>
 										<div class="form-group">	
 											<div class="col-md-6">
-											<label class="control-label">Date</label>
-									 
-												<input type="text" class="form-control datepicker"  id="datepicker">
-											 
-									 
-										</div>
-									</div>
-									<div class="clearfix"></div> 
-									<div class="form-group">	
-											<div class="col-md-6">
-											<label class="control-label">Date Of Birth</label>									 
-												<input type="text" class="form-control datepicker">												 
-										</div>
-									</div>
+												<label class="control-label">Date</label>
 
-									<div class="form-group">
+												<input type="text" class="form-control datepicker"  id="datepicker" name="date" readonly required>
+
+
+											</div>
+										</div>
+										<div class="clearfix"></div> 
+										<div class="form-group">	
+											<div class="col-md-6">
+												<label class="control-label">Date Of Birth</label>									 
+												<input type="text" class="form-control datepicker" name="dob" readonly required>
+											</div>
+										</div>
+										<div class="form-group">
 											<div class="col-md-6">
 												<label class="control-label">Age </label>
 												<input type="text" class="form-control" value="" name="age" id="age" placeholder="Enter Age">
@@ -76,7 +105,7 @@
 										<div class="form-group">
 											<div class="col-md-6">
 												<label class="control-label">Gender </label>
-												<select class="form-control">
+												<select class="form-control" name="gender">
 													<option value="">Selct Gender</option>
 													<option value="Male">Male</option>
 													<option value="Female">Female</option>
@@ -88,55 +117,49 @@
 										<div class="form-group">
 											<div class="col-md-6">
 												<label class="control-label">Address </label>
-												<textarea class="form-control"></textarea>
+												<textarea class="form-control" name="address"></textarea>
 												<span class="help-block"></span>
 											</div>
 										</div>
 										<div class="form-group">
 											<div class="col-md-6">
-												<label class="control-label">District </label>
-												<input class="form-control" > 
-												<span class="help-block"></span>
-											</div>
-										</div><div class="form-group">
-											<div class="col-md-6">
 												<label class="control-label">Pincode </label>
-												<input class="form-control" > 
+												<input class="form-control" name="pincode"> 
 												<span class="help-block"></span>
 											</div>
 										</div>
 										<div class="form-group">
 											<div class="col-md-6">
 												<label class="control-label">City </label>
-												<input class="form-control" > 
+												<input class="form-control" name="city" > 
 												<span class="help-block"></span>
 											</div>
 										</div>
 										<div class="form-group">
 											<div class="col-md-6">
 												<label class="control-label">State </label>
-												<input class="form-control" > 
+												<input class="form-control" name="state"> 
 												<span class="help-block"></span>
 											</div>
 										</div>
 										<div class="form-group">
 											<div class="col-md-6">
 												<label class="control-label">Mobile Number </label>
-												<input class="form-control" > 
+												<input class="form-control" name="mobile"> 
 												<span class="help-block"></span>
 											</div>
 										</div>
 										<div class="form-group">
 											<div class="col-md-6">
 												<label class="control-label">Email</label>
-												<input class="form-control" > 
+												<input class="form-control" name="email" type="email" required > 
 												<span class="help-block"></span>
 											</div>
 										</div>
 										<div class="form-group">
 											<div class="col-md-6">
 												<label class="control-label">Aadhar Number</label>
-												<input class="form-control" > 
+												<input class="form-control" name="aadhaar_no"> 
 												<span class="help-block"></span>
 											</div>
 										</div>
@@ -149,35 +172,35 @@
 										<div class="form-group">
 											<div class="col-md-6">
 												<label class="control-label">Account holder Name</label>
-												<input class="form-control" > 
+												<input class="form-control" name="acc_holder_name"> 
 												<span class="help-block"></span>
 											</div>
 										</div>
 										<div class="form-group">
 											<div class="col-md-6">
 												<label class="control-label">Account Number</label>
-												<input class="form-control" > 
+												<input class="form-control" name="acc_no"> 
 												<span class="help-block"></span>
 											</div>
 										</div>
 										<div class="form-group">
 											<div class="col-md-6">
 												<label class="control-label">IFSC Code</label>
-												<input class="form-control" > 
+												<input class="form-control" name="ifsc_code"> 
 												<span class="help-block"></span>
 											</div>
 										</div>
 										<div class="form-group">
 											<div class="col-md-6">
 												<label class="control-label">Branch</label>
-												<input class="form-control" > 
+												<input class="form-control" name="branch_name"> 
 												<span class="help-block"></span>
 											</div>
 										</div>
 										<div class="form-group">
 											<div class="col-md-6">
 												<label class="control-label">Bank Name</label>
-												<input class="form-control" > 
+												<input class="form-control" name="bank_name"> 
 												<span class="help-block"></span>
 											</div>
 										</div>
@@ -190,21 +213,21 @@
 										<div class="form-group">
 											<div class="col-md-6">
 												<label class="control-label">Sno</label>
-												<input class="form-control" > 
+												<input class="form-control" name="s_no"> 
 												<span class="help-block"></span>
 											</div>
 										</div>
 										<div class="form-group">
 											<div class="col-md-6">
 												<label class="control-label">PIN No</label>
-												<input class="form-control" > 
+												<input class="form-control" name="pin_no"> 
 												<span class="help-block"></span>
 											</div>
 										</div>
 										<div class="form-group">
 											<div class="col-md-6">
 												<label class="control-label">Sponsor ID No</label>
-												<input class="form-control" > 
+												<input class="form-control" name="sponsor_id"> 
 												<span class="help-block"></span>
 											</div>
 										</div>
@@ -217,31 +240,31 @@
 										<div class="form-group">
 											<div class="col-md-6">
 												<label class="control-label">Nominee Name</label>
-												<input class="form-control" > 
+												<input class="form-control" name="nominee_name"> 
 												<span class="help-block"></span>
 											</div>
 										</div>
 										<div class="form-group">
 											<div class="col-md-6">
 												<label class="control-label">Nominee Relationship</label>
-												<input class="form-control" > 
+												<input class="form-control" name="nominee_reltnshp"> 
 												<span class="help-block"></span>
 											</div>
 										</div>
 										<div class="form-group">
 											<div class="col-md-6">
 												<label class="control-label">Password</label>
-												<input class="form-control" type="password"> 
+												<input class="form-control" type="password" name="password" required> 
 												<span class="help-block"></span>
 											</div>
 										</div>
 										
-										 
-									 	<div class="clearfix"></div><br>
 
-										 <div class="form-group text-center m-b-0">
+										<div class="clearfix"></div><br>
+
+										<div class="form-group text-center m-b-0">
 											<button class="btn btn-primary waves-effect waves-light" type="submit">
-												Submit
+												Save
 											</button>
 											<button type="reset" class="btn btn-danger waves-effect waves-light m-l-5">
 												Cancel

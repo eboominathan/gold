@@ -16,7 +16,7 @@
 							<a href="javascript:void(0);">SalePoint Members</a>
 						</li>
 						<li class="active">
-							Downline Member Purchase  Details  
+							Downline Member Purchase Details  
 						</li>
 					</ol>
 				</div>
